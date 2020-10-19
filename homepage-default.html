@@ -1,0 +1,3620 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+    <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-08117103be773d6204a",applicationID:"572418288"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://ksassets.timeincuk.net" crossorigin>
+<link rel="preconnect" href="https://js-sec.indexww.com" crossorigin>
+
+
+    <style>
+@font-face {
+	font-family: "keystone";
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+	src:	url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/fonts/standard.woff2?v=1603085099") format("woff2"),
+	url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/fonts/standard.woff?v=1603085099") format("woff");
+}
+.icon-spinner {
+	background-image: url("//www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/spinner.gif");
+}
+
+</style><link rel="stylesheet" href="https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/assets/css/sites/post.min.css?v=1603085099">		<script type="text/javascript">
+		window.ipcTags = {"site":"trustedreviews","theme":"kiara-child-theme","section":"home","type":"homepage","cplatform":"keystone","dfp_config":{"required_tags":["type","section","site","pub","amp","single"],"available_criteria":{"mobile":{"criteria":{"window_greater_than":{"width_minimum":0},"window_less_than_equal_to":{"width_maximum":727}},"display_mode":"mobile"},"desktop":{"criteria":{"window_greater_than":{"width_minimum":727}},"display_mode":"desktop"}},"slots":{"header-1":{"name":{"mobile":"mobilebanner01","desktop":"billboard01"},"criteria":["desktop","mobile"],"inview":false,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-1":{"name":"inline01","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"inline-2":{"name":"inline02","criteria":["desktop","mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-side-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-side-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"post-inline-2":{"name":"mpu01","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-3":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-4":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"post-inline-5":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-1":{"name":"mpu01","criteria":["desktop"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-2":{"name":"mpu02","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-3":{"name":"mpu03","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-4":{"name":"mpu04","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-5":{"name":"mpu05","criteria":["desktop"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]]]},"archive-inline-1":{"name":"mpu01","criteria":["mobile"],"inview":false,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-2":{"name":"mpu02","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-3":{"name":"mpu03","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-4":{"name":"mpu04","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"archive-inline-5":{"name":"mpu05","criteria":["mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-1":{"name":{"desktop":"mpu01","mobile":"mpu02"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-2":{"name":{"desktop":"mpu02","mobile":"mpu03"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-3":{"name":{"desktop":"mpu03","mobile":"mpu04"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-4":{"name":{"desktop":"mpu04","mobile":"mpu05"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-5":{"name":{"desktop":"mpu05","mobile":"mpu06"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-6":{"name":{"desktop":"mpu06","mobile":"mpu07"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-7":{"name":{"desktop":"mpu07","mobile":"mpu08"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-8":{"name":{"desktop":"mpu08","mobile":"mpu09"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-9":{"name":{"desktop":"mpu09","mobile":"mpu10"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-10":{"name":{"desktop":"mpu010","mobile":"mpu11"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[300,250]],"sizeMapping":[[[728,0],[[300,600],[300,250],[300,50],[300,100],[300,1],"fluid"]],[[0,0],[[300,250],[320,50],[300,50],[320,100],[300,100],[300,1],"fluid"]]]},"gallery-inline-1":{"name":"gallery_banner01","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-2":{"name":"gallery_banner02","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-3":{"name":"gallery_banner03","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-4":{"name":"gallery_banner04","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-5":{"name":"gallery_banner05","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-6":{"name":"gallery_banner06","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-7":{"name":"gallery_banner07","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-8":{"name":"gallery_banner08","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-9":{"name":"gallery_banner09","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"gallery-inline-10":{"name":"gallery_banner10","criteria":["desktop"],"inview":true,"sizes":[[320,50]],"sizeMapping":[[[992,0],[[970,250],[970,90],[728,90],[728,1],"fluid"]],[[728,0],[[728,90],[728,1],"fluid"]]]},"instream":{"name":"instream","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[11,3]},"sovrn":{"name":"sovrn","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[12,2]},"gumgum":{"name":"gumgum","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[8,3]},"dfpad-overlay":{"name":"dfpad-overlay","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[1,1]}},"indexExchange":"ht\/p\/184316-8083655875230.js"},"env":"prod","geo":"us","skimlinks_enabled":true,"pxslot_base":"homepage","amp":false,"single":false,"pub":"trusted_reviews","template":"page-home"};
+		</script>
+
+	<!-- This site is optimized with the Yoast SEO plugin v15.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Trusted Reviews | Independent tech news and reviews</title>
+	<meta name="description" content="Tech news and expert reviews of the latest mobile phones, laptops, cameras, gadgets and home appliances. We&#039;ll help you buy the right product for you" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://www.trustedreviews.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Trusted Reviews | Independent tech news and reviews" />
+	<meta property="og:description" content="Tech news and expert reviews of the latest mobile phones, laptops, cameras, gadgets and home appliances. We&#039;ll help you buy the right product for you" />
+	<meta property="og:url" content="https://www.trustedreviews.com/" />
+	<meta property="og:site_name" content="Trusted Reviews" />
+	<meta property="article:publisher" content="https://www.facebook.com/TrustedReviews/" />
+	<meta property="article:modified_time" content="2018-11-29T09:09:15+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@trustedreviews" />
+	<meta name="twitter:site" content="@trustedreviews" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.trustedreviews.com/#website","url":"https://www.trustedreviews.com/","name":"Trusted Reviews","description":"Detailed expert reviews of the latest consumer electronics, IT and computing products.","potentialAction":[{"@type":"SearchAction","target":"https://www.trustedreviews.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.trustedreviews.com/#webpage","url":"https://www.trustedreviews.com/","name":"Trusted Reviews | Independent tech news and reviews","isPartOf":{"@id":"https://www.trustedreviews.com/#website"},"datePublished":"2017-04-21T12:45:24+00:00","dateModified":"2018-11-29T09:09:15+00:00","description":"Tech news and expert reviews of the latest mobile phones, laptops, cameras, gadgets and home appliances. We'll help you buy the right product for you","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.trustedreviews.com/"]}]}]}</script>
+	<meta name="google-site-verification" content="C9cYeg9UzQjW236iImWkZ2ZRqxxXrKL40VQFfqXJS4M" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.trustedreviews.com' />
+<link rel="alternate" type="application/rss+xml" title="Trusted Reviews &raquo; Feed" href="https://www.trustedreviews.com/feed" />
+<link rel='stylesheet' id='keystone-context-widget-css-css'  href='https://www.trustedreviews.com/wp-content/plugins/keystone-context-widget/assets/css/widget.css?ver=NS41LjE' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://www.trustedreviews.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.trustedreviews.com/wp-json/wp/v2/pages/2029386" /><link rel="alternate" type="application/json+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.trustedreviews.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.trustedreviews.com%2F&#038;format=xml" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.trustedreviews.com","logo":"https:\/\/www.trustedreviews.com\/wp-content\/uploads\/sites\/54\/2019\/08\/trusted-reviews-logo-white.png"}</script>
+<meta property="fb:pages" content="38275114220" />      <!-- Google Tag Manager -->
+      <script>(function ( w, d, s, l, i ) {
+          w[ l ] = w[ l ] || [];
+          w[ l ].push({
+            'gtm.start' :
+              new Date().getTime(), event : 'gtm.js'
+          });
+          var f = d.getElementsByTagName(s)[ 0 ],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer','GTM-K24XJLX');</script>
+      <!-- End Google Tag Manager -->
+      <link rel="icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.trustedreviews.com/wp-content/uploads/sites/54/2017/07/cropped-trusted-reviews-icon-3-270x270.png" />
+			<script type="text/javascript">
+				// Ensure the legacy APIs are still available.
+				window.tenantGetterQueue = window.tenantGetterQueue || [];
+				window.tenantSetterQueue = window.tenantSetterQueue || [];
+
+				// Register the Venatus task queue.
+				window.ipcVenatusQueue = window.ipcVenatusQueue || [];
+				window.ipcPlacementsMapping = window.ipcPlacementsMapping || {};
+
+				( function( venatusQueue ) {
+					var getDisplayWidth = function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+					var displayWidth = getDisplayWidth();
+
+					var displayWidthToPlacementIds = function( contextPlacementMap ) {
+						var placementIds = [];
+
+						if ( contextPlacementMap.mobile && displayWidth < 1000 ) {
+							placementIds.push( contextPlacementMap.mobile );
+						}
+						if ( contextPlacementMap.desktop && displayWidth >= 1000 ) {
+							placementIds.push( contextPlacementMap.desktop );
+						}
+						if ( contextPlacementMap.all ) {
+							placementIds.push( contextPlacementMap.all );
+						}
+
+						return placementIds;
+					}
+
+					var renderPlacement = function( placement ) {
+						if ( 'object' === typeof placement.placement_ids && placement.div_id ) {
+							displayWidthToPlacementIds( placement.placement_ids ).map( function( data ) {
+								var placeholder = document.getElementById( placement.div_id );
+								var element = document.createElement( 'div' );
+
+								if ( placeholder ) {
+									element.setAttribute( 'class', 'vm-placement' );
+									if ( data.id ) {
+										element.setAttribute( 'data-id', data.id );
+									}
+									if ( data.css ) {
+										Object.keys( data.css ).forEach( function( prop ) {
+											element.style[prop] = data.css[prop];
+										} );
+									}
+									placeholder.appendChild( element );
+								}
+							} );
+						}
+					}
+
+					venatusQueue.push = function( placementConfig ) {
+						if ( placementConfig ) {
+							renderPlacement( placementConfig );
+						}
+					}
+
+					venatusQueue.map( renderPlacement );
+				} )( window.ipcVenatusQueue );
+			</script>
+			<script src="https://hb.vntsm.com/v3/live/ad-manager.min.js" type="text/javascript" data-site-id="5f0f2c4a9326645fe4016720" data-mode="scan" defer></script>
+					<style type="text/css" id="wp-custom-css">
+			.apester-element {
+	width: auto!important;
+}
+
+.review-specs .review-specs__table {
+	display: block!important;
+}
+
+/* DO NOT REMOVE ANYTHING BELOW HERE WITHOUT ASKING JOHN HUDSON */
+
+.home.has-adverts,
+.page.has-adverts{
+	margin-top: 0!important;
+}
+
+.post-main strong {
+	font-size: 1.15em;
+}
+
+@media (max-width: 45.49em) {
+	.header .logo img {
+		max-width: 140px;
+	}
+}
+
+/* ----- HERO ----- */
+.home .listing--hero.s-container--fullbleed,
+.page .listing--hero.s-container--fullbleed {
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .s-container__inner,
+.page .listing--hero.s-container--fullbleed .s-container__inner {
+	max-width: 100%;
+}
+
+.home .listing--hero.s-container--fullbleed .widgettitle,
+.page .listing--hero.s-container--fullbleed .widgettitle {
+	display: block;
+    margin: 45px auto 30px;
+    max-width: 1440px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item,
+.page .listing--hero.s-container--fullbleed .listing-item {
+	padding: 0.5px;
+	text-align: left;
+  margin-bottom: 0!important;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:after,
+.page .listing--hero.s-container--fullbleed .listing-item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item .entry-content {
+	display: block;
+	padding: 30px 30px 65px 30px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:first-child .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item:first-child .entry-content {
+	background: rgb(82,21,120);
+	background: -moz-linear-gradient(left,  rgba(82,21,120,0.8) 0%, rgba(33,109,181,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	background: linear-gradient(to right,  rgba(82,21,120,0.8) 0%,rgba(33,109,181,0.8) 100%);
+	border-radius: 5px 0 0 0;
+	height: auto;
+	left: unset;
+    max-width: 720px;
+    right: 0;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item:last-child .entry-content,
+.page .listing--hero.s-container--fullbleed .listing-item:last-child .entry-content {
+	background: rgb(229,42,24);
+	background: -moz-linear-gradient(left,  rgba(229,42,24,0.8) 0%, rgba(82,21,120,0.8) 100%);
+	background: -webkit-linear-gradient(left,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	background: linear-gradient(to right,  rgba(229,42,24,0.8) 0%,rgba(82,21,120,0.8) 100%);
+	border-radius: 0 5px 0 0;
+	height: auto;
+    max-width: 720px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3, 
+.page .listing--hero.s-container--fullbleed .listing-item h3{
+	height: 120px;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item h3 span,
+.page .listing--hero.s-container--fullbleed .listing-item h3 span {
+	background: none;
+	box-shadow: none;
+	color: white;
+	line-height: 1;
+	padding: 0;
+	text-shadow: 1px 0 2px rgba(0,0,0,0.5);
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .taxonomy-signpost,
+.page .listing--hero.s-container--fullbleed .listing-item .taxonomy-signpost {
+	background: #000000;
+	border-radius: 20px;
+	bottom: 30px;
+	color: #ffffff;
+	display: block;
+	font-size: 0.65em;
+	left: 28px;
+	padding: 5px 10px;
+    position: absolute;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author,
+.page .listing--hero.s-container--fullbleed .listing-item .author,
+.listing--hero.s-container--fullbleed .listing-item .date {
+	color: #ffffff;
+	float: left;
+	margin: 30px 0 0 0;
+    padding-right: 10px;
+    text-transform: capitalize;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author,
+.page .listing--hero.s-container--fullbleed .listing-item .author {
+	margin-right: 10px;
+	padding-right: 12px;
+	position: relative;
+}
+
+.home .listing--hero.s-container--fullbleed .listing-item .author:after,
+.page .listing--hero.s-container--fullbleed .listing-item .author:after {
+	background: rgba(255,255,255,0.7);
+	content: '';
+	height: 10px;
+	position: absolute;
+	top: 3px;
+	right: 1px;
+    width: 1px;
+}
+
+/* ----- SINGLE INC SIDEBAR / FILMSTRIP ----- */
+
+.home .listing--single-inc-sidebar,
+.home .listing--filmstrip,
+.page .listing--single-inc-sidebar,
+.page .listing--filmstrip {
+  background: #eef4fa;
+  margin: 0;
+  padding: 0 15px;
+}
+
+.home .listing--filmstrip,
+.page .listing--filmstrip {
+	padding-bottom: 15px;
+}
+
+.home .listing--filmstrip p,
+.page .listing--filmstrip p {
+	color: #55627e;
+}
+
+.home .listing--filmstrip-b p,
+.page .listing--filmstrip-b p {
+	color: #ffffff;
+}
+
+.home .listing--single-inc-sidebar .widgettitle,
+.home .listing--filmstrip .widgettitle,
+.page .listing--single-inc-sidebar .widgettitle,
+.page .listing--filmstrip .widgettitle {
+    display: block;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 30px 0 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-items,
+.page .listing--single-inc-sidebar .listing-items {
+  padding: 15px 0;
+}
+
+.home .listing--single-inc-sidebar .listing-item,
+.page .listing--single-inc-sidebar .listing-item {
+  margin: 0;
+}
+
+.home .listing--single-inc-sidebar .listing-entry,
+.page .listing--single-inc-sidebar .listing-entry {
+  border-bottom: 1px #ffffff solid;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.home .listing--single-inc-sidebar .listing-item:last-child .listing-entry,
+.page .listing--single-inc-sidebar .listing-item:last-child .listing-entry {
+  border-bottom: none;
+}
+
+.home .listing--single-inc-sidebar .listing-entry .entry-image,
+.page .listing--single-inc-sidebar .listing-entry .entry-image {
+  padding-top: 60%;
+}
+
+.home .listing--single-inc-sidebar .entry-media,
+.page .listing--single-inc-sidebar .entry-media {
+  flex-basis: 30%;
+}
+
+.home .listing--single-inc-sidebar .entry-content,
+.page .listing--single-inc-sidebar .entry-content {
+  flex-basis: 70%;
+  padding: 0 15px;
+}
+
+.home .listing--single-inc-sidebar .entry-content h3,
+.page .listing--single-inc-sidebar .entry-content h3 {
+  font-size: 0.8em
+}
+
+.home .listing--single-inc-sidebar .entry-content .taxonomy-signpost,
+.home .listing--filmstrip .entry-content .taxonomy-signpost,
+.page .listing--single-inc-sidebar .entry-content .taxonomy-signpost,
+.page .listing--filmstrip .entry-content .taxonomy-signpost {
+  background: #000000;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 0.6em;
+  margin-bottom: 5px;
+  padding: 2px 5px;
+  text-transform: capitalize;
+}
+
+
+.home .listing--single-inc-sidebar .entry-content .author,
+.home .listing--single-inc-sidebar .entry-content .date,
+.home .listing--filmstrip .entry-content .author,
+.home .listing--filmstrip .entry-content .date,
+.page .listing--single-inc-sidebar .entry-content .author,
+.page .listing--single-inc-sidebar .entry-content .date,
+.page .listing--filmstrip .entry-content .author,
+.page .listing--filmstrip .entry-content .date {
+  color: #55627e;
+  display: block;
+  font-size: 0.6em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.home .listing--single-inc-sidebar .querywidget-more,
+.page .listing--single-inc-sidebar .querywidget-more {
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+
+@media (max-width: 1439px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3,
+  .page .listing--hero.s-container--fullbleed .listing-item h3 {
+		font-size: 1.6em;
+		height: 90px;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item .author,
+	.home .listing--hero.s-container--fullbleed .listing-item .date,
+  .page .listing--hero.s-container--fullbleed .listing-item .author,
+  .page .listing--hero.s-container--fullbleed .listing-item .date {
+		margin-top: 15px;
+	}
+}
+
+@media (max-width: 991px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item,
+  .page .listing--hero.s-container--fullbleed .listing-item {
+		flex-basis: 100%;
+		margin-bottom: 0!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .entry-content,
+  .page .listing--hero.s-container--fullbleed .entry-content {
+		max-width: 100%!important;
+	}
+
+	.home .listing--hero.s-container--fullbleed .listing-item h3,
+  .page .listing--hero.s-container--fullbleed .listing-item h3 {
+		height: auto;
+	}
+}
+
+@media (max-width: 727px) {
+
+	/* ----- HERO ----- */
+
+	.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+  .page .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		border-radius: 5px !important;
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+		display: block;
+		left: 5%!important;
+		margin-bottom: 5%;
+		margin-top: -10%;
+		max-width: 90% !important;
+		padding: 30px 30px 95px 30px;
+		right: 5%!important;
+	}
+}
+
+@media( min-width: 992px) {
+  /* ----- SINGLE INC SIDEBAR ----- */
+	
+	.home .listing--filmstrip,
+  .page .listing--filmstrip {
+		padding-bottom: 30px;
+	}
+
+  .home .listing--single-inc-sidebar .listing-entry .entry-media,
+  .page .listing--single-inc-sidebar .listing-entry .entry-media {
+      flex-basis: 25%;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry h3,
+  .page .listing--single-inc-sidebar .listing-entry h3 {
+      font-size: 1.2em;
+			padding-bottom: 0px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-content,
+  .page .listing--single-inc-sidebar .listing-entry .entry-content {
+      display: block;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .taxonomy-signpost, 
+  .home .listing--filmstrip .entry-content .taxonomy-signpost,
+  .page .listing--single-inc-sidebar .entry-content .taxonomy-signpost, 
+  .page .listing--filmstrip .entry-content .taxonomy-signpost {
+    font-size: 0.8em;
+  }
+
+
+  .home .listing--single-inc-sidebar .entry-content .author,
+  .home .listing--single-inc-sidebar .entry-content .date,
+  .home .listing--filmstrip .entry-content .author,
+  .home .listing--filmstrip .entry-content .date,
+  .page .listing--single-inc-sidebar .entry-content .author,
+  .page .listing--single-inc-sidebar .entry-content .date,
+  .page .listing--filmstrip .entry-content .author,
+  .page .listing--filmstrip .entry-content .date {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 10px;
+    padding-right: 10px;
+    position: relative;
+  }
+  
+  .home .listing--single-inc-sidebar .entry-content .author:after,
+  .home .listing--filmstrip .entry-content .author:after,
+  .page .listing--single-inc-sidebar .entry-content .author:after,
+  .page .listing--filmstrip .entry-content .author:after {
+    background: #a6acbb;
+    content: '';
+    height: 12px;
+    position: absolute;
+    right: -2px;
+    top: 4px;
+    width: 1px;
+  }
+  
+  .home .listing--single-inc-sidebar .listing-entry .entry-image,
+  .page .listing--single-inc-sidebar .listing-entry .entry-image {
+      padding-top: 56.25%;
+  }
+  
+}
+
+.listing-related {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 20px 0;
+}
+
+@media (min-width: 728px) {
+	.single-roundup .articleBody {
+		max-width: 992px !important;
+	}
+	
+	.single-roundup .roundup__card {
+		margin-left: unset;
+		margin-right: unset;
+		width: calc(100% - 300px)!important;
+	}
+	
+	.single-roundup .ad-container--inline-side {
+		margin-right: -20px !important;
+	}
+}
+
+@media (min-width: 78.25em) {
+
+	body.keystone-premium-inskin.has-adverts,
+	body.keystone-premium-sizmek.has-adverts,
+	body.keystone-premium-sizemek.has-adverts{
+		margin-top: 250px !important;
+	}
+	
+	body.keystone-premium-inskin.has-adverts #inline-1,
+	body.keystone-premium-sizmek.has-adverts #inline-1,
+	body.keystone-premium-sizemek.has-adverts #inline-1 {
+		height: 0;
+		margin-bottom: -90px;
+	}
+	
+	body.keystone-premium-inskin.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizmek.has-adverts.single-roundup .articleBody,
+	body.keystone-premium-sizemek.has-adverts.single-roundup .articleBody {
+		margin: 0 !important;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item h3, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item h3 { 
+		font-size: 1.4em;
+		height: 60px;
+	}
+
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .listing-item .entry-content,
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .listing-item .entry-content {
+		padding: 20px 30px 45px 30px;
+	}
+	
+	body.keystone-premium-inskin.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizmek.home .listing--hero.s-container--fullbleed .taxonomy-signpost, 
+	body.keystone-premium-sizemek.home .listing--hero.s-container--fullbleed .taxonomy-signpost { 
+	bottom: 10px;
+	}
+	
+	body.keystone-premium-inskin.single-format-video .post-body>*,
+	body.keystone-premium-sizmek.single-format-video .post-body>*,
+	body.keystone-premium-sizemek.single-format-video .post-body>*{
+		margin: 0 !important;
+		max-width: calc(100% - 315px);
+	}
+	
+	
+	.single-roundup .single-sidebar {
+		right: 20px;
+/* 		top: 560px; */
+	}
+	
+	.single-roundup .post-main__inner {
+		padding-right: 340px;
+	}
+	
+}
+
+@media (min-width: 1250px) {
+	.keystone-premium-skin .efw .efw_hero,
+	.keystone-premium-sizmek .efw .efw_hero,
+	.keystone-premium-sizemek .efw .efw_hero,
+	.keystone-premium-inskin .efw .efw_hero {
+		margin-left: calc(0px - (((100vw - 350px) - 700px) / 2));
+		max-width: calc(100vw - 350px);
+	}
+}
+
+@media (min-width: 1550px) {
+		.keystone-premium-skin .efw .efw_hero,
+	.keystone-premium-sizmek .efw .efw_hero,
+	.keystone-premium-sizemek .efw .efw_hero,
+	.keystone-premium-inskin .efw .efw_hero {
+		margin-left: calc(0px - ((1200px - 700px) / 2));
+		max-width: 1200px;
+	}
+}
+
+/* DO NOT REMOVE ANYTHING ABOVE HERE WITHOUT ASKING JOHN HUDSON */
+
+.eagle-widget.eagle-combo-widget .egl-combo-container {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #E52A18 0%, #521578 100%) 1;
+  min-width: 100%;
+  margin: 20px 0;
+  padding: 15px 0 25px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list h3.egl-combo-title {
+  display: block;
+  margin: 0 0 20px 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:not(:first-of-type) {
+    margin-top: 12px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+  border-radius: 5px;
+  background-color: white;
+  height: 90px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+  flex: 1;
+  padding: 10px 0 0 10px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+  display: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    display: flex;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  align-items: center;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2),
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  height: 45px;
+  background-color: #EEF4FA;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+  justify-content: flex-end;
+  padding: 10px 15px 0 0;
+  color: #E52A18;
+  align-items: flex-start;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  position: absolute;
+  bottom: 0;
+  flex: 1;
+  height: 45px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  left: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+  display: flex;
+  justify-content: center;
+  right: 10px;
+  min-width: 13%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view .egl-tr-button {
+  align-self: center;
+  background-color: transparent;
+  border-bottom: 1px solid red;
+  color: #000;
+  min-width: auto;
+  padding: 0 0 1px 0;
+  text-transform: capitalize;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  min-width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+  max-height: 75%;
+  object-fit: cover;
+  overflow: hidden;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a {
+  height: 120px;
+  margin-bottom: 18px;
+  background: linear-gradient(to right, #e52a18 0%, #521578 100%);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  left: 15px;
+  min-width: 105px;
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  max-width: 20%;
+  margin: 0;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo img {
+  max-width: 95%;
+  min-width: 90%;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+  border: 1px solid white;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  flex: 1;
+  margin-right: 0;
+  height: 30px;
+  width: 80px;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view .egl-tr-button {
+  color: white;
+  border-bottom: none;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+  color: #FFF;
+  font-size: 14px;
+  line-height: 18px;
+  min-width: 90px;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) {
+  display: flex;
+  flex: 5;
+  padding: 10px 20px 10px 10px;
+  height: auto;
+  background-color: transparent;
+}
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) .egl-deal-name {
+  font-size: 14px;
+  line-height: 18px;
+  font-family: 'Muli';
+  font-weight: bold;
+  color: #FFF;
+}
+
+.eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    min-width: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .eagle-widget.eagle-combo-widget .egl-combo-container {
+    border: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) {
+    padding: 0;
+    min-height: 100%;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type div:nth-child(2) div.egl-deal-stock {
+    display: none;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-logo {
+    height: 100%;
+    position: relative;
+    min-width: 20%;
+    max-width: 20%;
+    margin: 0;
+    left: 0;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #FFF;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div:nth-child(2) > div.egl-deal-name,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-price {
+    flex: 1;
+    margin: 0;
+    max-width: 20%;
+    justify-content: flex-end;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track:first-of-type a div.egl-deal-view {
+    background-color: transparent;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a {
+    height: 50px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    position: static;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo {
+    max-width: 20%;
+    display: flex;
+    align-items: center;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo img {
+    max-width: 100%;
+    max-height: 80%;
+    margin: 0 auto;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view {
+    max-width: 12%;
+    background-color: #EEF4FA;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    height: 100%;
+    padding: 0;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    height: 48px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+      min-width: 80px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock {
+    display: inline-block;
+    background-color: #FFF;
+    padding: 2px 10px 3px 8px;
+    border-radius: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: lighter;
+    color: #555;
+    width: 95px;
+    margin-right: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-logo div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-view div.egl-deal-stock:before,
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div:nth-child(2) div.egl-deal-stock:before {
+    content: '';
+    height: 9px;
+    width: 9px;
+    background-color: #7ED321;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    padding-top: 1px;
+    font-size: 13px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-name {
+    padding-left: 15px;
+  }
+  .eagle-widget.eagle-combo-widget .egl-combo-container .egl-combo-list div.egl-combo-row.egl-track a div.egl-deal-price {
+    max-width: 10%;
+  }
+}
+/* MOBILE WIDGET FIX */
+@media (max-width: 420px) {
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content {
+		margin-top: 30px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-row {
+	height: 120px;
+	min-height: 120px;
+}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__title {
+		margin: 0 0 15px 0;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__description {
+		position: relative;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-header__deals-count + a.egl-mob-header--cta {
+		top: -12px;
+		right: 0px;
+		padding: 5px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content h4.egl-mob-header__title {
+		margin: 5px 0 15px 0;
+	}
+  .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-tab .iradio_square-blue, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-tab input[type=radio] + label,
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form .egl-contract-features span {
+		font-size: 11px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form .egl-mob-tab {
+		margin: 0 5px;
+	}
+	.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-form {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-mob-row {
+	max-height: 120px;
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract-features{
+	font-size: 11px;
+}
+
+.eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract--bottom, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-contract--top, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-handset--bottom, .eagle-widget.eagle-mobile-widget .eagle-mob-widget-content .egl-handset--top {
+	height: auto;
+}
+
+/* COMBO WIDGET FIX */
+@media (min-width: 768px) {
+	.eagle-widget .widget-combo .combo-row .combo-row--stock,
+.eagle-widget .widget-combo .combo-row:not(:first-of-type) .combo-row--cta {
+	width: 85px;
+	font-size: 12px;
+	}
+}
+.combo-powered-by {
+	font-size: 12px;
+}		</style>
+		    			</head>
+
+<body class="home page-template page-template-pages page-template-home page-template-pageshome-php page page-id-2029386 has-adverts ipc-adverts-library--venatus_loader y2020 m10 d19 h08 section-home standard slim-header">
+
+<div class="parallax-wrapper parallax-wrapper--header"></div>
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K24XJLX"
+            height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+      </noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      
+<div id="wrapper" class="hfeed">
+
+			<header id="header" role="banner" class="header s-container has-single-tier">
+
+	<div class="header__inner">
+
+		
+						
+<h1 class="logo header-slot header-slot-">
+    <a href="/" title="Trusted Reviews" name="Trusted Reviews">
+    	<span class="hide">Trusted Reviews</span>
+	<picture>
+		<source media="(min-width: 728px)" srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" >
+		<source media="(max-width: 727px)" srcset="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" >
+		<img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/08/trusted-reviews-logo-white.png" alt="hero profile" aria-hidden="true" data-pin-nopin="true">
+	</picture>
+    </a>
+</h1>
+
+		
+	</div>
+
+		<nav>
+	<ul class="navigation hide-overflow-items" data-nav="closed">
+					<li class="has-subnav">
+				<a href="https://www.trustedreviews.com/" class= " "   title="Home Page"   name="HOME">
+									HOME
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/category/news"     name="News">News</a>
+															</li>
+													<li >
+								<a href="/category/opinion"     name="Opinions">Opinions</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/category/how-to"     name="How to">How to</a>
+															</li>
+													<li >
+								<a href="https://www.trustedreviews.com/samsung-galaxy"     name="Samsung Galaxy">Samsung Galaxy</a>
+															</li>
+											</ul>
+							</li>
+					<li class="has-subnav">
+				<a href="/reviews" class= " "    name="Reviews">
+									Reviews
+								</a>
+									<span class="submenu-toggle icon-arrow-down"></span>
+					<ul class="navigation-secondary">
+													<li >
+								<a href="/reviews/tvs-audio"     name="TV and Audio Reviews">TV and Audio Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/digital-cameras"     name="Camera Reviews">Camera Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/computing"     name="Computing Reviews">Computing Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/mobile"     name="Mobile Reviews">Mobile Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/home-appliances"     name="Home Appliance Reviews">Home Appliance Reviews</a>
+															</li>
+													<li >
+								<a href="/reviews/gaming"     name="Gaming Reviews">Gaming Reviews</a>
+															</li>
+											</ul>
+							</li>
+					<li >
+				<a href="/category/best" class= " "    name="Best Lists">
+									Best Lists
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/mobile" class= " "    name="Phones">
+									Phones
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/computing" class= " "    name="Computing">
+									Computing
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/laptop" class= " "    name="Laptops">
+									Laptops
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/home-appliances" class= " "    name="Home Tech">
+									Home Tech
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/televisions" class= " "    name="TV">
+									TV
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/audio" class= " "    name="Audio">
+									Audio
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/gaming" class= " "    name="Games">
+									Games
+								</a>
+							</li>
+					<li >
+				<a href="/category/deals" class= " "    name="Deals">
+									Deals
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/cameras" class= " "    name="Cameras">
+									Cameras
+								</a>
+							</li>
+					<li >
+				<a href="https://www.trustedreviews.com/info/about-us-2-3982927" class= " "    name="About Us">
+									About Us
+								</a>
+							</li>
+					<li >
+				<a href="https://discountcodes.trustedreviews.com" class= " "    name="Discount Codes">
+									Discount Codes
+								</a>
+							</li>
+		
+		
+		
+		<li class="menu-more has-subnav">
+			<a href="javascript:void(0)" name="See more menu items">More <span class="icon-plus"></span></a>
+			<ul></ul>
+		</li>
+	</ul>
+
+	<a href="javascript:void(0)" class="search-site icon-search" name="Search the site"><span class="hide">Search</span></a>
+
+	<a href="#" class="menu-icon-link hidden-md hidden-lg" name="Toggle the site menu">
+		<span class="menu-toggle icon-menu"><span class="hide">Menu</span></span>
+	</a>
+
+	<form role="search" method="get" class="search-form form-inline s-container" action="/">
+		<div class="input-group">
+			<input type="search" value="" name="s" class="input-sm search-field form-control" placeholder="Search">
+							<button type="submit" class="btn btn--sm" name="search">Search</button>
+						<div class="message-wrapper">
+				<label for="s" class="message message--type">Type to search</label>
+				<label for="s" class="message message--search hide">Press enter or click on the search icon</label>
+			</div>
+		</div>
+	</form>
+</nav>
+
+</header>	
+									<div class="trending">
+	<div class="trending__inner">
+		<div class="trending-list__outer">
+			<ul class="trending-list__inner">
+				<li>Trending:</li>
+									<li><a href="https://www.trustedreviews.com/news/trusted-reviews-awards-2020-4046173"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3628349"     name="Awards 2020">Awards 2020</a></li>
+									<li><a href="https://www.trustedreviews.com/working-from-home-complete-tech-guide"  class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item no-icon menu-item-3641029"     name="Working from home">Working from home</a></li>
+									<li><a href="https://www.trustedreviews.com/reviews/samsung-galaxy-s20"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3969484"     name="Galaxy S20 review">Galaxy S20 review</a></li>
+									<li><a href="/news/xbox-series-x-release-date-news-specs-price-3981014"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3922840"     name="Xbox Series X">Xbox Series X</a></li>
+									<li><a href="https://www.trustedreviews.com/reviews/iphone-11"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3931060"     name="iPhone 11 review">iPhone 11 review</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-iphone-3501342"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3628352"     name="Best iPhone">Best iPhone</a></li>
+									<li><a href="https://www.trustedreviews.com/best/best-free-vpn-3692123"  class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3936304"     name="Best free VPN">Best free VPN</a></li>
+							</ul>
+		</div>
+		<div class="trending__fade trending__fade--before"></div>
+		<div class="trending__fade trending__fade--after"></div>
+	</div>
+</div>				
+	<div id="content" role="main" class="container-fluid" >
+		    
+			<section id="collection_widget-16" class="s-container s-container--fullbleed sticky-anchor listing--hero listing--hero-b image-aspect-landscape  s-container s-container--fullbleed sticky-anchor hide-widget-title text-left widget_collection_widget"><div class="s-container__inner">
+	<ul
+			class="listing-items"
+			data-ad-count="1"			data-post-count="2"
+	>
+					
+			<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/pixel-5" title="Google Pixel 5 Review: Small phone, big camera" name="Google Pixel 5 Review: Small phone, big camera"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-620x413.jpg"
+     data-id="4103719"
+     class="image-sm lazyload blur-up"
+     alt="Pixel 5"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008400-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+																						
+											<div class="entry-content">
+
+																								<div class="taxonomy-signpost inline ">Google</div>
+															
+																																		<h3><span>Google Pixel 5 Review: Small phone, big camera</span></h3>
+																								
+																						
+																								<span class="author entry-author details" itemprop="author">Max Parker</span>
+								
+																	<span class="date details">
+										<time datetime="2020-10-14T16:00:51+01:00">
+																							October 14, 2020 4:00 pm BST
+																					</time>
+									</span>
+								
+																					</div>
+										 </a> </li>
+					
+			<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/opinion/8-ways-the-ps5-user-interface-will-improve-the-console-experience-4104093" title="8 ways the PS5 user interface will improve the console experience" name="8 ways the PS5 user interface will improve the console experience"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-620x349.jpg"
+     data-id="4041520"
+     class="image-sm lazyload blur-up"
+     alt="PS5"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/07/Ec8ab6nXYAADt2I-1620x911.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+																						
+											<div class="entry-content">
+
+																								<div class="taxonomy-signpost inline ">Opinion</div>
+															
+																																		<h3><span>8 ways the PS5 user interface will improve the console experience</span></h3>
+																								
+																						
+																								<span class="author entry-author details" itemprop="author">Ryan Jones</span>
+								
+																	<span class="date details">
+										<time datetime="2020-10-15T16:17:26+01:00">
+																							October 15, 2020 4:17 pm BST
+																					</time>
+									</span>
+								
+																					</div>
+										 </a> </li>
+			</ul>
+</div></section><section id="ipc-advert-id-7" class=" s-container sticky-anchor hide-widget-title ipc-advert-class"><div id="venatus__inline-1__0" class="ipc-advert venatus-placeholder ipc-advert-inline-1">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__inline-1__0","placement_ids":{"mobile":{"id":"5f5a140790f8c727f173ace9","css":{"min-height":"50px"}},"desktop":{"id":"5f5a13e7ebf74d173c00cdcd","css":{"min-height":"250px"}}}} );
+					</script>
+				</div></section><section id="keystone-query-widget-id-35" class="palette-a s-container--inc-sidebar listing--single-inc-sidebar s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span>Today's Tech News</span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+		data-ad-count="1"		data-post-count="8"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/opinion/winners-and-losers-iphone-12-pro-camera-wows-while-talk-about-lack-of-chargers-bore-4104177" title="Winners and Losers: iPhone 12 Pro camera wows while talk about lack of chargers bore" name="Winners and Losers: iPhone 12 Pro camera wows while talk about lack of chargers bore"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/WL-23-620x413.jpg"
+     data-id="4104288"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/WL-23-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/WL-23-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/WL-23-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Opinion</div>
+													<h3><span>Winners and Losers: iPhone 12 Pro camera wows while talk about lack of chargers bore</span></h3>
+								
+																								<span class="author entry-author details">Max Parker</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-18T09:25:58+01:00">
+																	October 18, 2020 9:25 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/how-to/everton-vs-liverpool-live-stream-watch-the-merseyside-derby-online-4104375" title="Everton vs Liverpool Live Stream: How to watch the Merseyside Derby online" name="Everton vs Liverpool Live Stream: How to watch the Merseyside Derby online"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/GettyImages-1221752208-620x414.jpg"
+     data-id="4104378"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="414"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/GettyImages-1221752208-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/GettyImages-1221752208-620x414.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/GettyImages-1221752208-920x614.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">How to</div>
+													<h3><span>Everton vs Liverpool Live Stream: How to watch the Merseyside Derby online</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-17T10:39:12+01:00">
+																	October 17, 2020 10:39 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+										
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/opinion/fast-charge-the-pixel-5-is-a-nexus-phone-in-all-but-name-and-thats-fantastic-4104061" title="Fast Charge: The Pixel 5 is a Nexus phone in all but name, and that’s fantastic" name="Fast Charge: The Pixel 5 is a Nexus phone in all but name, and that’s fantastic"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/FC-27-620x413.jpg"
+     data-id="4104289"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/FC-27-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/FC-27-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/FC-27-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Opinion</div>
+													<h3><span>Fast Charge: The Pixel 5 is a Nexus phone in all but name, and that’s fantastic</span></h3>
+								
+																								<span class="author entry-author details">Alastair Stevenson</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-17T08:23:32+01:00">
+																	October 17, 2020 8:23 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/sorry-ps5-gamers-xbox-boss-hints-hell-raise-drawbridge-on-bethesda-games-4104393" title="Sorry PS5 gamers, Xbox boss hints he'll raise drawbridge on Bethesda games" name="Sorry PS5 gamers, Xbox boss hints he'll raise drawbridge on Bethesda games"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-620x349.jpg"
+     data-id="4031954"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/fallout-76-wastelanders-update-boosts-steam-rating-review-bomb-1620x911.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>Sorry PS5 gamers, Xbox boss hints he'll raise drawbridge on Bethesda games</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T21:30:59+01:00">
+																	October 16, 2020 9:30 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/youtube-music-apple-watch-app-no-wearos-4104389" title="Google's latest Apple Watch app proves Wear OS is an afterthought" name="Google's latest Apple Watch app proves Wear OS is an afterthought"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/youtube-music-apple-watch-620x465.png"
+     data-id="4104390"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="465"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/youtube-music-apple-watch-320x240.png 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/youtube-music-apple-watch-620x465.png 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/youtube-music-apple-watch-920x690.png 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/youtube-music-apple-watch-1220x915.png 1220w,
+			"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>Google's latest Apple Watch app proves Wear OS is an afterthought</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T20:59:33+01:00">
+																	October 16, 2020 8:59 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+							<li id="single-sidebar-1" class="single-sidebar single-sidebar--pqw single-sidebar--all">
+	<div class="ad-container ad-sticky">
+		<div id="venatus__pqw-1__1" class="ipc-advert venatus-placeholder ipc-advert-pqw-1">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__pqw-1__1","placement_ids":{"desktop":{"id":"5f5a13baae1aad1faeac58ee","css":{"min-height":"600px"}}}} );
+					</script>
+				</div>	</div>
+</li>				
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/the-iphone-13-may-save-us-from-face-id-face-mask-woes-4104381" title="The iPhone 13 may save us from Face ID face mask woes" name="The iPhone 13 may save us from Face ID face mask woes"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-620x413.jpg"
+     data-id="4027423"
+     class="image-sm lazyload blur-up"
+     alt="iphone SE 2 back"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>The iPhone 13 may save us from Face ID face mask woes</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T20:14:19+01:00">
+																	October 16, 2020 8:14 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/one-plus-8t-cyberpunk-2077-special-edition-4104368" title="OnePlus 8T Cyberpunk 2077 edition could be the hottest phone of the season" name="OnePlus 8T Cyberpunk 2077 edition could be the hottest phone of the season"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/oneplus-8t-cyberpunk-2077-1-620x349.jpg"
+     data-id="4104371"
+     class="image-sm lazyload blur-up"
+     alt="oneplus 8t cyberpunk 2077"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/oneplus-8t-cyberpunk-2077-1-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/oneplus-8t-cyberpunk-2077-1-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/oneplus-8t-cyberpunk-2077-1-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/oneplus-8t-cyberpunk-2077-1-1220x686.jpg 1220w,
+			"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>OnePlus 8T Cyberpunk 2077 edition could be the hottest phone of the season</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T18:40:53+01:00">
+																	October 16, 2020 6:40 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/opinion/level-up-dont-underestimate-the-importance-of-backwards-compatibility-on-ps5-and-xbox-series-x-4104235" title="Level Up: Don’t underestimate the importance of backwards compatibility on PS5 and Xbox Series X" name="Level Up: Don’t underestimate the importance of backwards compatibility on PS5 and Xbox Series X"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/level-up-11-620x413.jpg"
+     data-id="4104255"
+     class="image-sm lazyload blur-up"
+     alt="Level Up"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/level-up-11-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/level-up-11-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/level-up-11-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Opinion</div>
+													<h3><span>Level Up: Don’t underestimate the importance of backwards compatibility on PS5 and Xbox Series X</span></h3>
+								
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T18:22:14+01:00">
+																	October 16, 2020 6:22 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div></section><section id="keystone-query-widget-id-36" class="palette-a filmstrip-4 listing--filmstrip s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span><a href="/reviews">Featured Reviews</a></span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="4"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/panasonic-hz1000-tx-65hz1000" title="Panasonic TX-65HZ1000" name="Panasonic TX-65HZ1000"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/Panasonic-HZ1000-OLED-TV-620x359.jpg"
+     data-id="4100854"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="359"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/Panasonic-HZ1000-OLED-TV-320x185.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/Panasonic-HZ1000-OLED-TV-620x359.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/Panasonic-HZ1000-OLED-TV-920x533.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Panasonic</div>
+													<h3><span>Panasonic TX-65HZ1000</span></h3>
+								
+											<p>An OLED that's a cinematic treat</p>
+																								<span class="author entry-author details">Kob Monney</span>
+					
+											<span class="date details">
+							<time datetime="2020-09-30T10:14:03+01:00">
+																	September 30, 2020 10:14 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/samsung-odyssey-g9" title="Samsung Odyssey G9" name="Samsung Odyssey G9"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Odyssey-G9-02-620x413.jpg"
+     data-id="4045994"
+     class="image-sm lazyload blur-up"
+     alt="Samsung Odyssey G9 02"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Odyssey-G9-02-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Odyssey-G9-02-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Odyssey-G9-02-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Odyssey-G9-02-1220x813.jpg 1220w,
+			"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Samsung</div>
+													<h3><span>Samsung Odyssey G9</span></h3>
+								
+											<p>A stunning curved widescreen that offers more features than almost any rival.</p>
+																								<span class="author entry-author details">Mike Jennings</span>
+					
+											<span class="date details">
+							<time datetime="2020-08-25T15:01:33+01:00">
+																	August 25, 2020 3:01 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/sony-wh-1000xm4" title="Sony WH-1000XM4 review: The best ANC headphones of 2020" name="Sony WH-1000XM4 review: The best ANC headphones of 2020"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-620x413.jpg"
+     data-id="4046169"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Sony-WH-1000XM4-new-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Sony</div>
+													<h3><span>Sony WH-1000XM4 review: The best ANC headphones of 2020</span></h3>
+								
+											<p>The king of premium noise cancellers has returned</p>
+																								<span class="author entry-author details">Kob Monney</span>
+					
+											<span class="date details">
+							<time datetime="2020-08-19T15:04:13+01:00">
+																	August 19, 2020 3:04 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/oppo-find-x2-pro" title="Oppo Find X2 Pro review: One of the best phones around" name="Oppo Find X2 Pro review: One of the best phones around"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-620x348.jpg"
+     data-id="4017432"
+     class="image-sm lazyload blur-up"
+     alt="Oppo Find X2 Pro"
+     width="620"
+	 height="348"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-620x348.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-920x516.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-1220x685.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-1620x909.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/Oppo-Find-X2-Pro-2-of-12-1920x1078.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Oppo</div>
+													<h3><span>Oppo Find X2 Pro review: One of the best phones around</span></h3>
+								
+											<p>As it stands, it’s one of the best out there</p>
+																								<span class="author entry-author details">Basil Kronfli</span>
+					
+											<span class="date details">
+							<time datetime="2020-06-10T09:50:10+01:00">
+																	June 10, 2020 9:50 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div><div class="querywidget-more">
+	<a href="/reviews" class="btn btn-primary icon-button--after" name="Read more">More Reviews</a>
+</div>
+</section><section id="keystone-query-widget-id-41" class="palette-a filmstrip-5 listing--filmstrip s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span><a href="https://www.trustedreviews.com/working-from-home-complete-tech-guide?nocache">Latest home working & schooling advice</a></span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="5"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/best-laptops-3431966" title="Best Laptops in 2020" name="Best Laptops in 2020"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-620x413.jpeg"
+     data-id="4097516"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-320x213.jpeg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-620x413.jpeg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-920x613.jpeg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-1220x813.jpeg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-1620x1080.jpeg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF0828-1920x1280.jpeg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best Laptops in 2020</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-tablet-3438986" title="Best tablet 2020: For once it's not just about Apple" name="Best tablet 2020: For once it's not just about Apple"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/03/iPadAirvsPro-620x413.png"
+     data-id="3679474"
+     class="image-sm lazyload blur-up"
+     alt="Apple iPad Air vs iPad Pro"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/03/iPadAirvsPro-320x213.png 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/03/iPadAirvsPro-620x413.png 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/03/iPadAirvsPro-920x613.png 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best tablet 2020: For once it's not just about Apple</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-ipad-3613843" title="Best Apple iPad: Should you get the Pro, Air, Mini or standard?" name="Best Apple iPad: Should you get the Pro, Air, Mini or standard?"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-620x349.png"
+     data-id="3937018"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-320x180.png 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-620x349.png 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-920x518.png 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-1220x686.png 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-1620x911.png 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/09/iPad-7th-Gen-23-1920x1080.png 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best Apple iPad: Should you get the Pro, Air, Mini or standard?</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/ultrabook-3440182" title="Best ultrabooks 2020: Top 10 ultra-portable laptops" name="Best ultrabooks 2020: Top 10 ultra-portable laptops"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-620x413.jpg"
+     data-id="4044932"
+     class="image-sm lazyload blur-up"
+     alt="Samsung Galaxy Book Ion"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-920x612.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-1220x812.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-1620x1078.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/08/Samsung-Galaxy-Book-Ion-12-scaled-e1597056595690-1920x1278.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best ultrabooks 2020: Top 10 ultra-portable laptops</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-student-laptop-3444216" title="Best student laptop 2020: Top 10 student notebooks and convertibles" name="Best student laptop 2020: Top 10 student notebooks and convertibles"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-620x413.jpg"
+     data-id="4035925"
+     class="image-sm lazyload blur-up"
+     alt="Best Student Laptop"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-Student-Laptop-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best student laptop 2020: Top 10 student notebooks and convertibles</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div><div class="querywidget-more">
+	<a href="https://www.trustedreviews.com/working-from-home-complete-tech-guide?nocache" class="btn btn-primary icon-button--after" name="Read more">All home working and schooling</a>
+</div>
+</section><section id="custom_html-10" class="widget_text  s-container s-container--fullbleed sticky-anchor widget_custom_html"><div class="textwidget custom-html-widget"><style>
+
+    /* ================= FONTS ================= */
+
+    /* nunito-400 */
+    @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 400;
+        font-display: fallback;
+        src: local("Nunito"), local("Nunito"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/nunito/nunito-regular.woff2")
+                format("woff2"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/nunito/nunito-regular.woff")
+                format("woff");
+    }
+
+    /* nunito-700 */
+    @font-face {
+        font-family: "Nunito";
+        font-style: normal;
+        font-weight: 700;
+        font-display: fallback;
+        src: local("Nunito Bold"), local("Nunito-Bold"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/nunito/nunito-bold.woff2")
+                format("woff2"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/nunito/nunito-bold.woff")
+                format("woff");
+    }
+
+    /* muli bold */
+    @font-face {
+        font-family: "Muli";
+        font-style: normal;
+        font-weight: 700;
+        font-display: fallback;
+        src: local("Muli Bold"), local("Muli-Bold"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/muli/muli-bold.woff2")
+                format("woff2"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/muli/muli-bold.woff")
+                format("woff");
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* muli black */
+    @font-face {
+        font-family: "Muli";
+        font-style: normal;
+        font-weight: 900;
+        font-display: fallback;
+        src: local("Muli Black"), local("Muli-Black"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/muli/muli-black.woff2")
+                format("woff2"),
+            url("/wp-content/themes/simba-theme/assets/fonts/google/muli/muli-black.woff")
+                format("woff");
+        /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* ================= ICONS ================= */
+
+    .icon-awards {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7b3BhY2l0eTowLjA1O2ZpbGw6IzAyMDIwMzt9LnN0MXtmaWxsOiMwMjAyMDM7fS5zdDJ7ZmlsbDp1cmwoI1NWR0lEXzFfKTt9LnN0M3tmaWxsOnVybCgjU1ZHSURfMl8pO30uc3Q0e2ZpbGw6IzAxMDIwMjt9LnN0NXtmaWxsOnVybCgjU1ZHSURfM18pO308L3N0eWxlPjxnIGlkPSJMYXllcl8xIj48L2c+PGcgaWQ9IkxheWVyXzIiPjxnPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTEuMjcxOCIgeTE9IjYuMDAwMyIgeDI9IjExLjI3MTgiIHkyPSI0Mi42NDkiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTYuMTksMjkuMTJjMC40MSwwLDAuNzgtMC4yMiwwLjk4LTAuNTljMC4xNC0wLjI2LDAuMTctMC41NiwwLjA4LTAuODRjLTAuMDktMC4yOC0wLjI4LTAuNTEtMC41NC0wLjY1Yy03LjM3LTMuOS04Ljg3LTEzLjItOS4xNy0xNy4wMmMtMC4wMS0wLjE1LDAuMDQtMC4zLDAuMTQtMC40MWMwLjEtMC4xMSwwLjI0LTAuMTcsMC40LTAuMTdoMy4yMWMwLjYxLDAsMS4xLTAuNDksMS4xLTEuMWMwLTAuNjEtMC40OS0xLjEtMS4xLTEuMUg2LjM1Yy0wLjYsMC0xLjA5LDAuNDktMS4xLDEuMDhDNS4yNCw4Ljk0LDUuMTQsMjMuNDEsMTUuNjgsMjlDMTUuODMsMjkuMDgsMTYuMDEsMjkuMTIsMTYuMTksMjkuMTJ6Ii8+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8yXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI0Ny4zNCIgeTE9IjYuMDAwMyIgeDI9IjQ3LjM0IiB5Mj0iNDIuNjQ5Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0MyIgZD0iTTUzLjM2LDguMzNjLTAuMDEtMC42LTAuNS0xLjA4LTEuMS0xLjA4aC00LjkyYy0wLjYxLDAtMS4xLDAuNDktMS4xLDEuMWMwLDAuNjEsMC40OSwxLjEsMS4xLDEuMWgzLjIxYzAuMTUsMCwwLjI5LDAuMDYsMC4zOSwwLjE3YzAuMSwwLjExLDAuMTUsMC4yNiwwLjE0LDAuNDFjLTAuMywzLjgxLTEuNzgsMTMuMS05LjE4LDE3LjAyYy0wLjI2LDAuMTQtMC40NSwwLjM3LTAuNTQsMC42NWMtMC4wOSwwLjI4LTAuMDYsMC41OCwwLjA4LDAuODRjMC4xOSwwLjM2LDAuNTcsMC41OSwwLjk4LDAuNTljMC4xOCwwLDAuMzUtMC4wNCwwLjUxLTAuMTNDNTMuNDcsMjMuNDEsNTMuMzcsOC45NCw1My4zNiw4LjMzeiIvPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfM18iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjkuMzA1OSIgeTE9IjEuMDM5OCIgeDI9IjI5LjMwNTkiIHkyPSI4Ny4xMjczIj48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0NSIgZD0iTTQxLjg4LDUyLjYxdi0zLjI4YzAtMC42MS0wLjQ5LTEuMS0xLjEtMS4xaC0xLjY0Yy0zLjAxLDAtNS40Ni0yLjQ1LTUuNDYtNS40NnYtMS42NGMwLTAuMywwLjI0LTAuNTQsMC41NC0wLjU0aDEuNjR2LTIuMmgtMS42NGMtMC4zLDAtMC41NC0wLjI0LTAuNTQtMC41NHYtMy4yMmMwLjAxLTAuMywwLjA2LTAuNzIsMC4yNC0wLjljMCwwLDAsMCwwLTAuMDFjNC40LTMuMTMsOS41OS0xMC42Myw5LjU5LTI4LjY2YzAtMC42MS0wLjQ5LTEuMS0xLjEtMS4xSDE2LjE5Yy0wLjYxLDAtMS4xLDAuNDktMS4xLDEuMWMwLDE4LjAzLDUuMTksMjUuNTMsOS41OSwyOC42NmMwLDAsMCwwLDAsMC4wMWMwLjE4LDAuMTgsMC4yMywwLjYsMC4yNCwwLjg5djMuMjNjMCwwLjMtMC4yNCwwLjU0LTAuNTQsMC41NGgtMS42NHYyLjJoMS42NGMwLjMsMCwwLjU0LDAuMjQsMC41NCwwLjU0djEuNjRjMCwzLjAxLTIuNDUsNS40Ni01LjQ2LDUuNDZoLTEuNjRjLTAuNjEsMC0xLjEsMC40OS0xLjEsMS4xdjMuMjhjMCwwLjMtMC4yNCwwLjU0LTAuNTQsMC41NGgtMy4yOHYyLjJINDUuN3YtMi4yaC0zLjI4QzQyLjEyLDUzLjE1LDQxLjg4LDUyLjkxLDQxLjg4LDUyLjYxeiBNMjIuNzksMjguNjRjLTMuNDUtNC43Ni01LjI5LTEyLjEzLTUuNDgtMjEuOTJjMC0wLjE0LDAuMDUtMC4yOCwwLjE1LTAuMzljMC4xLTAuMSwwLjI0LTAuMTYsMC4zOC0wLjE2aDIyLjkyYzAuMTQsMCwwLjI4LDAuMDYsMC4zOCwwLjE2YzAuMSwwLjEsMC4xNiwwLjI0LDAuMTUsMC4zOWMtMC4xOSw5Ljc3LTIuMDMsMTcuMTQtNS40NywyMS45MWMtMi43MywzLjc3LTUuNiw0LjY0LTYuNDEsNC44MmMtMC4wNCwwLjAxLTAuMDgsMC4wMS0wLjExLDAuMDFjLTAuMDQsMC0wLjA4LDAtMC4xMS0wLjAxQzI4LjM4LDMzLjI3LDI1LjUxLDMyLjQsMjIuNzksMjguNjR6IE0yNy42Nyw0MC42aDMuMjhjMC4zLDAsMC41NCwwLjI0LDAuNTQsMC41NHYxLjY0YzAsMS42NSwwLjU0LDMuMjMsMS41Nyw0LjU5YzAuMTIsMC4xNiwwLjE0LDAuMzgsMC4wNSwwLjU2Yy0wLjA5LDAuMTgtMC4yOCwwLjMtMC40OCwwLjNoLTYuNjRjLTAuMiwwLTAuMzktMC4xMi0wLjQ4LTAuM2MtMC4wOS0wLjE4LTAuMDctMC40LDAuMDUtMC41NmMxLjAzLTEuMzYsMS41Ny0yLjk1LDEuNTctNC41OXYtMS42NEMyNy4xMyw0MC44NCwyNy4zNyw0MC42LDI3LjY3LDQwLjZ6IE0yNy4xMywzNy44NnYtMS45OWMwLTAuMTcsMC4wOC0wLjMzLDAuMjItMC40NGMwLjA5LTAuMDcsMC4yLTAuMSwwLjMyLTAuMWMwLjA2LDAsMC4xMSwwLjAxLDAuMTcsMC4wM2MwLjgyLDAuMjcsMS4zNSwwLjMyLDEuMzcsMC4zMmMwLjAzLDAsMC4wNiwwLDAuMSwwaDBjMC4wMywwLDAuMDYsMCwwLjEsMGMwLjAyLDAsMC41NS0wLjA1LDEuMzctMC4zMmMwLjA1LTAuMDIsMC4xMS0wLjAzLDAuMTctMC4wM2MwLjExLDAsMC4yMiwwLjA0LDAuMzIsMC4xYzAuMTQsMC4xLDAuMjIsMC4yNiwwLjIyLDAuNDR2MS45OWMwLDAuMy0wLjI0LDAuNTQtMC41NCwwLjU0aC0zLjI4QzI3LjM3LDM4LjQsMjcuMTMsMzguMTYsMjcuMTMsMzcuODZ6IE0zOS42OCw1Mi42MWMwLDAuMy0wLjI0LDAuNTQtMC41NCwwLjU0SDE5LjQ3Yy0wLjMsMC0wLjU0LTAuMjQtMC41NC0wLjU0di0xLjY0YzAtMC4zLDAuMjQtMC41NCwwLjU0LTAuNTRoMTkuNjdjMC4zLDAsMC41NCwwLjI0LDAuNTQsMC41NFY1Mi42MXoiLz48L2c+PC9nPjwvc3ZnPg==);
+    }
+    .icon-reviews {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7b3BhY2l0eTowLjA1O2ZpbGw6IzAyMDIwMzt9LnN0MXtmaWxsOiMwMjAyMDM7fS5zdDJ7ZmlsbDp1cmwoI1NWR0lEXzFfKTt9LnN0M3tmaWxsOnVybCgjU1ZHSURfMl8pO30uc3Q0e2ZpbGw6IzAxMDIwMjt9LnN0NXtmaWxsOnVybCgjU1ZHSURfM18pO30uc3Q2e2ZpbGw6dXJsKCNTVkdJRF80Xyk7fS5zdDd7ZmlsbDp1cmwoI1NWR0lEXzVfKTt9LnN0OHtmaWxsOnVybCgjU1ZHSURfNl8pO30uc3Q5e2ZpbGw6dXJsKCNTVkdJRF83Xyk7fS5zdDEwe2ZpbGw6dXJsKCNTVkdJRF84Xyk7fTwvc3R5bGU+PGcgaWQ9IkxheWVyXzEiPjwvZz48ZyBpZD0iTGF5ZXJfMiI+PGc+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8xXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyOS44NTM4IiB5MT0iLTYuMDkzIiB4Mj0iMjkuODUzOCIgeTI9Ijg5LjQ1MDkiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTQuMDgsMTkuNThINS42MmMtMC41NSwwLTEsMC40NS0xLDF2MzQuNDVjMCwwLjU1LDAuNDUsMSwxLDFoNDguNDZjMC41NSwwLDEtMC40NSwxLTFWMjAuNThDNTUuMDksMjAuMDMsNTQuNjQsMTkuNTgsNTQuMDgsMTkuNTh6IE01My4wOCw1NC4wM0g2LjYyVjIxLjU4aDQ2LjQ2VjU0LjAzeiIvPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjkuODUzNiIgeTE9Ii02LjA5MyIgeDI9IjI5Ljg1MzYiIHkyPSI4OS40NTA5Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMTEuNiIgeT0iMTQuMzgiIGNsYXNzPSJzdDMiIHdpZHRoPSIzNi41IiBoZWlnaHQ9IjIiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzNfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI5Ljg1MzgiIHkxPSItNi4wOTMiIHgyPSIyOS44NTM4IiB5Mj0iODkuNDUwOSI+PHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0U1MkIxQyIvPjxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM0RDI3NzMiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjE3LjI5IiB5PSI5LjE3IiBjbGFzcz0ic3Q1IiB3aWR0aD0iMjUuMTIiIGhlaWdodD0iMiIvPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNF8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjkuODUzOCIgeTE9Ii02LjA5MyIgeDI9IjI5Ljg1MzgiIHkyPSI4OS40NTA5Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMjIuOTgiIHk9IjMuOTciIGNsYXNzPSJzdDYiIHdpZHRoPSIxMy43NSIgaGVpZ2h0PSIyIi8+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF81XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIyMC4yOTIyIiB5MT0iLTYuMDkzIiB4Mj0iMjAuMjkyMiIgeTI9Ijg5LjQ1MDkiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3Q3IiBkPSJNMTUuNjEsMzkuMzNsLTEuOTUsNS45OWMtMC4xMywwLjQxLDAuMDEsMC44NiwwLjM2LDEuMTJjMC4xOCwwLjEzLDAuMzgsMC4xOSwwLjU5LDAuMTlzMC40MS0wLjA2LDAuNTktMC4xOWw1LjA5LTMuN2w1LjA5LDMuN2MwLjM1LDAuMjUsMC44MiwwLjI1LDEuMTgsMGMwLjM1LTAuMjUsMC41LTAuNzEsMC4zNi0xLjEybC0xLjk1LTUuOTlsNS4wOS0zLjdjMC4zNS0wLjI1LDAuNS0wLjcxLDAuMzYtMS4xMnMtMC41Mi0wLjY5LTAuOTUtMC42OWgtNi4yOWwtMS45NS01Ljk5Yy0wLjEzLTAuNDEtMC41Mi0wLjY5LTAuOTUtMC42OXMtMC44MiwwLjI4LTAuOTUsMC42OWwtMS45NSw1Ljk5aC02LjNjLTAuNDMsMC0wLjgyLDAuMjgtMC45NSwwLjY5czAuMDEsMC44NiwwLjM2LDEuMTJMMTUuNjEsMzkuMzN6IE0xOC4xMiwzNS44MmMwLjQzLDAsMC44Mi0wLjI4LDAuOTUtMC42OWwxLjIyLTMuNzVsMS4yMiwzLjc1YzAuMTMsMC40MSwwLjUyLDAuNjksMC45NSwwLjY5aDMuOTRsLTMuMTksMi4zMmMtMC4zNSwwLjI1LTAuNSwwLjcxLTAuMzYsMS4xMmwxLjIyLDMuNzVsLTMuMTktMi4zMmMtMC4zNS0wLjI1LTAuODItMC4yNS0xLjE4LDBsLTMuMTksMi4zMmwxLjIyLTMuNzVjMC4xMy0wLjQxLTAuMDEtMC44Ni0wLjM2LTEuMTJsLTMuMTktMi4zMkgxOC4xMnoiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzZfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjQxLjE3NCIgeTE9Ii02LjA5MyIgeDI9IjQxLjE3NCIgeTI9Ijg5LjQ1MDkiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3Q4IiBkPSJNMzUuMjQsMzcuODhINDcuMWMwLjU1LDAsMS0wLjQ1LDEtMXYtOS4yMmMwLTAuNTUtMC40NS0xLTEtMUgzNS4yNGMtMC41NSwwLTEsMC40NS0xLDF2OS4yMkMzNC4yNCwzNy40NCwzNC42OSwzNy44OCwzNS4yNCwzNy44OHogTTM2LjI0LDI4LjY2aDkuODZ2Ny4yMmgtOS44NlYyOC42NnoiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzdfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjQxLjE3NCIgeTE9Ii02LjA5MyIgeDI9IjQxLjE3NCIgeTI9Ijg5LjQ1MDkiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3Q5IiBkPSJNMzUuMjQsNDMuMkg0Ny4xYzAuNTUsMCwxLTAuNDUsMS0xcy0wLjQ1LTEtMS0xSDM1LjI0Yy0wLjU1LDAtMSwwLjQ1LTEsMVMzNC42OSw0My4yLDM1LjI0LDQzLjJ6Ii8+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF84XyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI0MS4xNzQiIHkxPSItNi4wOTMiIHgyPSI0MS4xNzQiIHkyPSI4OS40NTA5Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0MTAiIGQ9Ik0zNS4yNCw0OC41MUg0Ny4xYzAuNTUsMCwxLTAuNDUsMS0xcy0wLjQ1LTEtMS0xSDM1LjI0Yy0wLjU1LDAtMSwwLjQ1LTEsMVMzNC42OSw0OC41MSwzNS4yNCw0OC41MXoiLz48L2c+PC9nPjwvc3ZnPg==);
+    }
+    .icon-team {
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7b3BhY2l0eTowLjA1O2ZpbGw6IzAyMDIwMzt9LnN0MXtmaWxsOiMwMjAyMDM7fS5zdDJ7ZmlsbDp1cmwoI1NWR0lEXzFfKTt9LnN0M3tmaWxsOnVybCgjU1ZHSURfMl8pO30uc3Q0e2ZpbGw6IzAxMDIwMjt9LnN0NXtmaWxsOnVybCgjU1ZHSURfM18pO30uc3Q2e2ZpbGw6dXJsKCNTVkdJRF80Xyk7fS5zdDd7ZmlsbDp1cmwoI1NWR0lEXzVfKTt9LnN0OHtmaWxsOnVybCgjU1ZHSURfNl8pO308L3N0eWxlPjxnIGlkPSJMYXllcl8xIj48L2c+PGcgaWQ9IkxheWVyXzIiPjxnPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfMV8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iNDUuMzMxOCIgeTE9IjQuMjMwOCIgeDI9IjQ1LjMzMTgiIHkyPSI3MC4xMjU0Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0MiIgZD0iTTQ5LjA2LDQyLjYzYzAuNzctMC44OSwxLjItMi4wNCwxLjItMy4yMmMwLTIuNzItMi4yMS00LjkzLTQuOTMtNC45M3MtNC45MywyLjIxLTQuOTMsNC45M2MwLDEuMTcsMC40MywyLjMzLDEuMiwzLjIyYy0xLjU4LDEuMTctMi41LDMuMDEtMi41LDV2Mi4yOWgyLjA1di0yLjI5YzAtMS43MiwxLjAzLTMuMjQsMi42Mi0zLjg4YzAuMzctMC4xNSwwLjYxLTAuNDgsMC42NC0wLjg4YzAuMDMtMC4zOS0wLjE3LTAuNzYtMC41MS0wLjk2Yy0wLjg5LTAuNTItMS40NS0xLjQ3LTEuNDUtMi41YzAtMS41OSwxLjI5LTIuODgsMi44OS0yLjg4czIuODgsMS4yOSwyLjg4LDIuODhjMCwxLjAzLTAuNTUsMS45OC0xLjQ1LDIuNWMtMC4zNCwwLjE5LTAuNTQsMC41Ny0wLjUxLDAuOTZjMC4wMywwLjM5LDAuMjgsMC43MywwLjY0LDAuODhjMS41OSwwLjY0LDIuNjIsMi4xNywyLjYyLDMuODh2Mi4yOWgyLjA1di0yLjI5QzUxLjU3LDQ1LjY0LDUwLjY0LDQzLjgsNDkuMDYsNDIuNjN6Ii8+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8yXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI0NS4zMzE4IiB5MT0iNC4yMzA4IiB4Mj0iNDUuMzMxOCIgeTI9IjcwLjEyNTQiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3QzIiBkPSJNNDUuMzMsMzAuMzRjLTcuMDgsMC0xMi44NSw1Ljc2LTEyLjg1LDEyLjg1czUuNzYsMTIuODUsMTIuODUsMTIuODVzMTIuODUtNS43NiwxMi44NS0xMi44NVM1Mi40MiwzMC4zNCw0NS4zMywzMC4zNHogTTQ1LjMzLDU0LjAzYy01Ljk4LDAtMTAuODUtNC44Ny0xMC44NS0xMC44NXM0Ljg3LTEwLjg1LDEwLjg1LTEwLjg1czEwLjg1LDQuODcsMTAuODUsMTAuODVTNTEuMzEsNTQuMDMsNDUuMzMsNTQuMDN6Ii8+PGxpbmVhckdyYWRpZW50IGlkPSJTVkdJRF8zXyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxNC42NjgyIiB5MT0iNC4yMzA4IiB4Mj0iMTQuNjY4MiIgeTI9IjcwLjEyNTQiPjxzdG9wICBvZmZzZXQ9IjAiIHN0eWxlPSJzdG9wLWNvbG9yOiNFNTJCMUMiLz48c3RvcCAgb2Zmc2V0PSIxIiBzdHlsZT0ic3RvcC1jb2xvcjojNEQyNzczIi8+PC9saW5lYXJHcmFkaWVudD48cGF0aCBjbGFzcz0ic3Q1IiBkPSJNMTguNCw0Mi42M2MwLjc3LTAuODksMS4yLTIuMDQsMS4yLTMuMjJjMC0yLjcyLTIuMjEtNC45My00LjkzLTQuOTNzLTQuOTMsMi4yMS00LjkzLDQuOTNjMCwxLjE4LDAuNDMsMi4zMywxLjIsMy4yMmMtMS41NywxLjE3LTIuNSwzLjAxLTIuNSw1djIuMjloMi4wNXYtMi4yOWMwLTEuNzIsMS4wMy0zLjI0LDIuNjItMy44OGMwLjM2LTAuMTUsMC42MS0wLjQ5LDAuNjQtMC44OGMwLjAzLTAuMzktMC4xNy0wLjc2LTAuNTEtMC45NmMtMC44OS0wLjUyLTEuNDUtMS40Ny0xLjQ1LTIuNWMwLTEuNTksMS4yOS0yLjg4LDIuODktMi44OHMyLjg4LDEuMjksMi44OCwyLjg4YzAsMS4wMy0wLjU2LDEuOTgtMS40NSwyLjVjLTAuMzQsMC4xOS0wLjU0LDAuNTctMC41MSwwLjk2YzAuMDMsMC4zOSwwLjI4LDAuNzMsMC42NCwwLjg4YzEuNTksMC42NCwyLjYyLDIuMTcsMi42MiwzLjg4djIuMjloMi4wNXYtMi4yOUMyMC45LDQ1LjY0LDE5Ljk3LDQzLjgsMTguNCw0Mi42M3oiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzRfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjE0LjY2NzciIHkxPSI0LjIzMDgiIHgyPSIxNC42Njc3IiB5Mj0iNzAuMTI1NCI+PHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0U1MkIxQyIvPjxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM0RDI3NzMiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGNsYXNzPSJzdDYiIGQ9Ik0xNC42NywzMC4zNGMtNy4wOCwwLTEyLjg1LDUuNzYtMTIuODUsMTIuODVzNS43NiwxMi44NSwxMi44NSwxMi44NXMxMi44NS01Ljc2LDEyLjg1LTEyLjg1UzIxLjc1LDMwLjM0LDE0LjY3LDMwLjM0eiBNMTQuNjcsNTQuMDNjLTUuOTgsMC0xMC44NS00Ljg3LTEwLjg1LTEwLjg1czQuODctMTAuODUsMTAuODUtMTAuODVzMTAuODUsNC44NywxMC44NSwxMC44NVMyMC42NSw1NC4wMywxNC42Nyw1NC4wM3oiLz48bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzVfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI5Ljk2MTYiIHkxPSI0LjIzMDgiIHgyPSIyOS45NjE2IiB5Mj0iNzAuMTI1NCI+PHN0b3AgIG9mZnNldD0iMCIgc3R5bGU9InN0b3AtY29sb3I6I0U1MkIxQyIvPjxzdG9wICBvZmZzZXQ9IjEiIHN0eWxlPSJzdG9wLWNvbG9yOiM0RDI3NzMiLz48L2xpbmVhckdyYWRpZW50PjxwYXRoIGNsYXNzPSJzdDciIGQ9Ik0zMy42OSwxNi4yNmMwLjc3LTAuODksMS4yLTIuMDQsMS4yLTMuMjJjMC0yLjcyLTIuMjEtNC45My00LjkzLTQuOTNzLTQuOTMsMi4yMS00LjkzLDQuOTNjMCwxLjE3LDAuNDMsMi4zMywxLjIsMy4yMmMtMS41OCwxLjE3LTIuNSwzLjAxLTIuNSw1djIuMjloMi4wNXYtMi4yOWMwLTEuNzIsMS4wMy0zLjI0LDIuNjItMy44OGMwLjM2LTAuMTUsMC42MS0wLjQ5LDAuNjQtMC44OGMwLjAzLTAuMzktMC4xNy0wLjc2LTAuNTEtMC45NmMtMC44OS0wLjUyLTEuNDUtMS40Ny0xLjQ1LTIuNWMwLTEuNTksMS4yOS0yLjg4LDIuODktMi44OHMyLjg4LDEuMjksMi44OCwyLjg4YzAsMS4wMy0wLjU1LDEuOTgtMS40NSwyLjVjLTAuMzQsMC4xOS0wLjU0LDAuNTctMC41MSwwLjk2YzAuMDMsMC4zOSwwLjI4LDAuNzMsMC42NCwwLjg4YzEuNTksMC42NCwyLjYyLDIuMTcsMi42MiwzLjg4djIuMjloMi4wNXYtMi4yOUMzNi4yLDE5LjI3LDM1LjI3LDE3LjQzLDMzLjY5LDE2LjI2eiIvPjxsaW5lYXJHcmFkaWVudCBpZD0iU1ZHSURfNl8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjkuOTYxNiIgeTE9IjQuMjMwOCIgeDI9IjI5Ljk2MTYiIHkyPSI3MC4xMjU0Ij48c3RvcCAgb2Zmc2V0PSIwIiBzdHlsZT0ic3RvcC1jb2xvcjojRTUyQjFDIi8+PHN0b3AgIG9mZnNldD0iMSIgc3R5bGU9InN0b3AtY29sb3I6IzREMjc3MyIvPjwvbGluZWFyR3JhZGllbnQ+PHBhdGggY2xhc3M9InN0OCIgZD0iTTQyLjgxLDE2LjgxYzAtNy4wOC01Ljc2LTEyLjg1LTEyLjg1LTEyLjg1UzE3LjExLDkuNzMsMTcuMTEsMTYuODFzNS43NiwxMi44NSwxMi44NSwxMi44NVM0Mi44MSwyMy45LDQyLjgxLDE2LjgxeiBNMjkuOTYsMjcuNjZjLTUuOTgsMC0xMC44NS00Ljg3LTEwLjg1LTEwLjg1UzIzLjk4LDUuOTcsMjkuOTYsNS45N3MxMC44NSw0Ljg3LDEwLjg1LDEwLjg1UzM1Ljk0LDI3LjY2LDI5Ljk2LDI3LjY2eiIvPjwvZz48L2c+PC9zdmc+);
+    }
+
+    /* ================= MOBILE ================= */
+
+    .tr-banner {
+        background-color: black;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 32px 23px;
+        position: relative;
+        margin-bottom: -15px;
+        left: -15px;
+        top: -15px;
+        width: 100vw;
+    }
+    .tr-banner__content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        max-width: 1440px;
+    }
+    .tr-banner__title {
+        color: #fff;
+        font-family: "Muli";
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 30px;
+    }
+    .tr-banner__section-title {
+        color: #fff;
+        cursor: pointer;
+        font-family: "Muli";
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: normal;
+        margin: 0;
+    }
+    .tr-banner__text {
+        color: #fff;
+        font-family: "Nunito";
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: normal;
+        line-height: 18px;
+    }
+    .tr-banner-stars svg {
+        fill: red;
+        height: 12px;
+        width: 12px;
+    }
+    .tr-banner-stars {
+        display: block;
+        margin: 10px 0;
+    }
+    .tr-banner__content--sections {
+        margin-top: 10px;
+    }
+    .tr-banner__accordion {
+        border-top: 1px solid #333333;
+        outline: none;
+        padding: 15px 0;
+        text-align: left;
+        -webkit-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+    }
+    .tr-banner__content--sections > div:first-child .tr-banner__accordion:first-of-type {
+        border-top: 1px solid #333333;
+    }
+    .active {
+        border-bottom: none;
+    }
+    .active h3:after {
+        content: url("data:image/svg+xml;utf8,<svg width='9px' height='14px' viewBox='0 0 9 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='chevron/red' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g id='Group' transform='translate(2.000000, 2.000000)' fill='rgba(229, 42, 24, 1)' fill-rule='nonzero'><path d='M6.31851044,5 L6.366362,5.04785156 L0.25,11.1642136 L-1.16421356,9.75 L3.58578644,5 L-1.16421356,0.25 L0.25,-1.16421356 L6.366362,4.95214844 L6.31851044,5 Z' id='Combined-Shape'></path></g></g></svg>");
+        float: right;
+        height: 10px;
+        margin: 5px 8px 0 0;
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    .tr-banner__accordion:not(.active) h3:after {
+        content: url("data:image/svg+xml;utf8,<svg width='9px' height='14px' viewBox='0 0 9 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='chevron/red' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><g id='Group' transform='translate(2.000000, 2.000000)' fill='rgba(51, 51, 51, 1)' fill-rule='nonzero'><path d='M6.31851044,5 L6.366362,5.04785156 L0.25,11.1642136 L-1.16421356,9.75 L3.58578644,5 L-1.16421356,0.25 L0.25,-1.16421356 L6.366362,4.95214844 L6.31851044,5 Z' id='Combined-Shape'></path></g></g></svg>");
+        float: right;
+        padding-right: 8px;
+    }
+    .tr-banner__panel-text .tr-banner__section-title {
+        display: none;
+    }
+    /* .img-container {
+        background-color: #d8d8d8;
+        border-radius: 5px;
+        height: 80px;
+        width: 130px;
+    } */
+    .icon-desktop {
+        display: block;
+        margin: 22px 0;
+        height: 50px;
+        width: 50px;
+    }
+    .tr-banner__panel {
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: max-height 0.2s ease-out;
+        -o-transition: max-height 0.2s ease-out;
+        transition: max-height 0.2s ease-out;
+    }
+    .tr-banner__panel-text {
+        margin: 15px 0;
+        line-height: 1;
+    }
+    .tr-banner__panel-text span {
+        font-size: 11.5px;
+        color: white;
+    }
+    .tr-banner__section-link {
+        display: block;
+        margin: 4px 0 0 0;
+    }
+    .tr-banner__section-link a {
+        color: #fff;
+        font-size: 11.5px;
+        padding-bottom: 1px;
+        cursor: pointer;
+        border-bottom: 1px solid red;
+    }
+    .tr-banner__text a {
+        color: #fff;
+        padding-bottom: 1px;
+        cursor: pointer;
+        border-bottom: 1px solid red;
+    }
+
+    /* ================= TABLET ================= */
+
+    @media screen and (min-width: 728px) {
+        .tr-banner {
+            padding: 30px 40px 30px 40px;
+            left: -45px;
+        }
+        .tr-banner__content {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+        }
+        .tr-banner__panel-text .tr-banner__section-title {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .tr-banner__title {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 1;
+        }
+        .tr-banner-stars svg {
+            height: 12px;
+            width: 12px;
+        }
+        .tr-banner-stars {
+            display: inline-block;
+            margin: 10px 0 20px 5px;
+        }
+        .tr-banner__text {
+            font-size: 13px;
+            line-height: 18px;
+            font-family: 'Nunito';
+            -webkit-text-stroke: 0.2px;
+        }
+        .tr-banner__accordion {
+            display: none;
+        }
+        .tr-banner__panel {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            margin-bottom: 30px;
+            max-height: 100%;
+            padding: 0;
+            border-bottom: none;
+        }
+        /* .tr-banner__panel .img-container {
+            height: 65px;
+            margin-right: 15px;
+            width: 90px;
+        } */
+        .tr-banner__panel-text {
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            font-size: 13px;
+            line-height: 18px;
+            margin: 0;
+        }
+        .tr-banner__panel-text > img {
+            display: block;
+            float: right;
+            margin: 12px 0 0 12px;
+            width: 45px;
+            height: 45px;
+        }
+        .tr-banner__panel-text span,
+        .tr-banner__section-link a {
+            font-size: 13px;
+            line-height: 18px;
+            -webkit-text-stroke: 0.2px;
+        }
+        .tr-banner__content--top {
+            padding: 15px 60px 15px 0;
+            max-width: 360px;
+        }
+        .tr-banner__content--sections {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+        }
+        .tr-banner__section-link {
+            font-size: 10px;
+            display: inline-block;
+        }
+        .icon-desktop {
+            display: none;
+        }
+        .icon-tablet {
+            display: block;
+            float: right;
+            margin: 24px 0 0 30px;
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    /* ================= DESKTOP ================= */
+
+    @media screen and (min-width: 1440px) {
+        .tr-banner {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            font-size: 16px;
+            min-height: auto;
+            padding: 0;
+            width: 100vw;
+            /* left: calc(0vw - ((100vw - 1440px)/2)); */
+        }
+        .tr-banner__content {
+            height: 100%;
+            width: 100%;
+        }
+        .tr-banner__content--sections {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            margin: 0;
+            max-width: 100%;
+        }
+        .tr-banner__content--top {
+            padding: 40px 40px 50px 0;
+            min-width: 33%;
+        }
+        .tr-banner__content--sections > div {
+            width: 100%;
+        }
+        .tr-banner__panel {
+            border-left: 1px solid #333333;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            height: 100%;
+            padding: 50px 30px 34px 30px;
+            margin-bottom: 0;
+        }
+        /* .img-container {
+            height: 32%;
+            margin: 0 0 25px 0;
+            width: 65%;
+        } */
+        .icon-tablet {
+            display: none;
+        }
+        .tr-banner__section-link {
+            display: block;
+        }
+        .tr-banner__section-link a,
+        .tr-banner__text a {
+            -webkit-transition: 0.5s color;
+            -o-transition: 0.5s color;
+            transition: 0.5s color;
+        }
+        .tr-banner__section-link a:hover,
+        .tr-banner__text a:hover {
+            color: red;
+        }
+        .tr-banner__panel-text .tr-banner__section-title {
+            margin-bottom: 10px;
+        }
+        .tr-banner__panel-text span,
+        .tr-banner__section-link a {
+            font-size: 14px;
+            line-height: 20px;
+            font-family: 'Nunito';
+        }
+        .tr-banner__title {
+            font-size: 22px;
+        }
+        .tr-banner-stars svg {
+            height: 18px;
+            width: 18px;
+        }
+        .tr-banner__text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .icon-desktop {
+            display: block;
+            margin: 24px 0 0 0;
+            height: 60px;
+            width: 60px;
+        }
+        .tr-banner__content--sections > div {
+            width: 100%;
+        }
+    }
+
+    /* ================= SKINS ================= */
+    @media screen and (min-width: 1200px) {
+        body.keystone-premium-sizmek .tr-banner, 
+        body.keystone-premium-sizemek .tr-banner, 
+        body.keystone-premium-inskin .tr-banner {
+            left: -15px;
+            padding: 0 30px;
+            width: calc(100% + 30px);
+        }
+    }
+</style>
+
+<div class="tr-banner">
+    <div class="tr-banner__content">
+        <div class="tr-banner__content--top">
+            <h1 class="tr-banner__title">
+                What is Trusted Reviews?
+                <span class="tr-banner-stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                    </svg>
+                </span>
+            </h1>
+            <p class="tr-banner__text">
+                Founded in 2004, Trusted Reviews exists to give our readers thorough, unbiased and independent advice on what to buy.
+            </p>
+            <p class="tr-banner__text">
+                We do this by employing experienced expert reviewers, who thoroughly test everything they recommend, to explain what’s best for most people. It’s that simple.
+            </p>
+            <p class="tr-banner__text">This is our guarantee to our readers. Please write and tell us how we’re doing, to <a href="mailto:editor@trustedreviews.com">editor@trustedreviews.com</a></p>
+        </div>
+        <div class="tr-banner__content--sections">
+            <div>
+                <div class="tr-banner__accordion">
+                    <h3 class="tr-banner__section-title">Who we are</h3>
+                </div>
+                <div class="tr-banner__panel">
+                    <div class="tr-banner__panel-text">
+                        <div class="icon-team icon-tablet"></div>
+                        <h3 class="tr-banner__section-title">Who we are</h3>
+                        <span>Our team includes many of the most experienced technology writers in the UK. They will tell you what is and isn’t worth buying, in straightforward plain English. </span>
+                        <div class="tr-banner__section-link">
+                            <a href="https://www.trustedreviews.com/info/who-we-are-3551613">Meet the team</a>
+                        </div>
+                    </div>
+                    <div class="icon-team icon-desktop"></div>
+                </div>
+            </div>
+            <div>
+                <div class="tr-banner__accordion">
+                    <h3 class="tr-banner__section-title">Why you should trust us</h3>
+                </div>
+                <div class="tr-banner__panel">
+                    <div class="tr-banner__panel-text">
+                        <div class="icon-awards icon-tablet"></div>
+                        <h3 class="tr-banner__section-title">Why you should trust us</h3>
+                        <span>Our writers always say what they think, not what someone wants them to say. Manufacturers don’t vet our reviews and we never, ever accept money to test something.</span>
+                        <div class="tr-banner__section-link">
+                            <a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647">Read our ethics policy</a>
+                        </div>
+                    </div>
+                    <div class="icon-awards icon-desktop"></div>
+                </div>
+            </div>
+            <div>
+                <div class="tr-banner__accordion">
+                    <h3 class="tr-banner__section-title">Why we’re different</h3>
+                </div>
+                <div class="tr-banner__panel">
+                    <div class="tr-banner__panel-text">
+                        <div class="icon-reviews icon-tablet"></div>
+                        <h3 class="tr-banner__section-title">Why we’re different</h3>
+                        <span>Unlike other sites, we thoroughly test everything we recommend. We use industry standard tests, in properly equipped facilities, to evaluate products in order to compare them properly against each other.</span>
+                        <div class="tr-banner__section-link">
+                            <a href="https://www.trustedreviews.com/info/test-review-products-trusted-reviews-3944085">Find out how we test</a>
+                        </div>
+                    </div>
+                    <div class="icon-reviews icon-desktop"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var accordions = document.getElementsByClassName("tr-banner__accordion");
+
+    for (var i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script></div></section><section id="ipc-advert-id-6" class=" s-container sticky-anchor hide-widget-title ipc-advert-class"><div id="venatus__inline-2__1" class="ipc-advert venatus-placeholder ipc-advert-inline-2">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__inline-2__1","placement_ids":{"mobile":{"id":"5f5a140790f8c727f173ace9","css":{"min-height":"50px"}},"desktop":{"id":"5f5a13e7ebf74d173c00cdcd","css":{"min-height":"250px"}}}} );
+					</script>
+				</div></section><section id="collection_widget-15" class="s-container s-container--fullbleed sticky-anchor listing--hero listing--hero-b image-aspect-landscape  s-container s-container--fullbleed sticky-anchor text-left widget_collection_widget"><h2 class="widgettitle heading"><span>Editor&#8217;s Picks</span></h2><div class="s-container__inner">
+	<ul
+			class="listing-items"
+			data-ad-count="1"			data-post-count="2"
+	>
+					
+			<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/iphone-se-2" title="iPhone SE 2 review: Simply excellent" name="iPhone SE 2 review: Simply excellent"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-620x413.jpg"
+     data-id="4027423"
+     class="image-sm lazyload blur-up"
+     alt="iphone SE 2 back"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iphonese2-6-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+																						
+											<div class="entry-content">
+
+																								<div class="taxonomy-signpost inline ">Apple</div>
+															
+																																		<h3><span>iPhone SE 2 review: Simply excellent</span></h3>
+																								
+																						
+																								<span class="author entry-author details" itemprop="author">Max Parker</span>
+								
+																	<span class="date details">
+										<time datetime="2020-05-01T15:41:02+01:00">
+																							May 1, 2020 3:41 pm BST
+																					</time>
+									</span>
+								
+																					</div>
+										 </a> </li>
+					
+			<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/huawei-p40-pro" title="Huawei P40 Pro Review: No Google, but a great camera" name="Huawei P40 Pro Review: No Google, but a great camera"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/p40pro-1-3-620x414.jpeg"
+     data-id="4019333"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="414"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/p40pro-1-3-320x214.jpeg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/p40pro-1-3-620x414.jpeg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/p40pro-1-3-920x614.jpeg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/03/p40pro-1-3-1220x814.jpeg 1220w,
+			"/>				</div>
+			</div>
+		
+									
+																						
+											<div class="entry-content">
+
+																								<div class="taxonomy-signpost inline ">Huawei</div>
+															
+																																		<h3><span>Huawei P40 Pro Review: No Google, but a great camera</span></h3>
+																								
+																						
+																								<span class="author entry-author details" itemprop="author">Basil Kronfli</span>
+								
+																	<span class="date details">
+										<time datetime="2020-04-27T17:03:22+01:00">
+																							April 27, 2020 5:03 pm BST
+																					</time>
+									</span>
+								
+																					</div>
+										 </a> </li>
+			</ul>
+</div></section><section id="keystone-query-widget-id-37" class="palette-a s-container--inc-sidebar listing--single-inc-sidebar s-container--inc-sidebar listing--single-inc-sidebar-b s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span><a href="/reviews">Latest Reviews</a></span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+		data-ad-count="1"		data-post-count="5"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/panasonic-soundslayer-gaming-speaker" title="Panasonic Soundslayer Gaming Speaker" name="Panasonic Soundslayer Gaming Speaker"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-620x349.jpg"
+     data-id="4104281"
+     class="image-sm lazyload blur-up"
+     alt="Panasonic Soundslayer"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-1620x911.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/20201016_115912-1-1920x1080.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Panasonic</div>
+													<h3><span>Panasonic Soundslayer Gaming Speaker</span></h3>
+								
+											<p>Perfect for gamers who aren't after a more complete surround sound experience.</p>
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T14:18:06+01:00">
+																	October 16, 2020 2:18 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/fitbit-sense" title="Fitbit Sense – our verdict on the premium wearable" name="Fitbit Sense – our verdict on the premium wearable"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/IMG_20201016_121312-620x465.jpg"
+     data-id="4104293"
+     class="image-sm lazyload blur-up"
+     alt="Fitbit Sense"
+     width="620"
+	 height="465"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/IMG_20201016_121312-320x240.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/IMG_20201016_121312-620x465.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/IMG_20201016_121312-920x690.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Fitbit</div>
+													<h3><span>Fitbit Sense – our verdict on the premium wearable</span></h3>
+								
+											<p>Does Fitbit's most expensive device stack up?</p>
+																								<span class="author entry-author details">Thomas Deehan</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T13:42:07+01:00">
+																	October 16, 2020 1:42 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+							<li id="single-sidebar-2" class="single-sidebar single-sidebar--pqw single-sidebar--all">
+	<div class="ad-container ad-sticky">
+		<div id="venatus__pqw-2__3" class="ipc-advert venatus-placeholder ipc-advert-pqw-2">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__pqw-2__3","placement_ids":{"desktop":{"id":"5f5a13baae1aad1faeac58ee","css":{"min-height":"600px"}}}} );
+					</script>
+				</div>	</div>
+</li>				
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/lg-xboom-go-pl7" title="LG XBOOM Go PL7" name="LG XBOOM Go PL7"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/LG-XBOOM-GO-PL7-620x413.jpg"
+     data-id="4103133"
+     class="image-sm lazyload blur-up"
+     alt="LG XBOOM Go PL7"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/LG-XBOOM-GO-PL7-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/LG-XBOOM-GO-PL7-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/LG-XBOOM-GO-PL7-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">LG</div>
+													<h3><span>LG XBOOM Go PL7</span></h3>
+								
+											<p>A fun party speaker with impressive sound quality</p>
+																								<span class="author entry-author details">Kob Monney</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T10:31:30+01:00">
+																	October 16, 2020 10:31 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/trifo-max" title="Trifo Max" name="Trifo Max"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-620x414.jpg"
+     data-id="4102914"
+     class="image-sm lazyload blur-up"
+     alt="Trifo Max hero"
+     width="620"
+	 height="414"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-320x214.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-620x414.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-920x614.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-1220x815.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Trifo-Max-1-1620x1082.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Trifo</div>
+													<h3><span>Trifo Max</span></h3>
+								
+											<p>A robot vacuum cleaner that's also a security camera</p>
+																								<span class="author entry-author details">David Ludlow</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T09:27:37+01:00">
+																	October 16, 2020 9:27 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/reviews/optoma-hz40" title="Optoma HZ40" name="Optoma HZ40"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/OptomaHZ40AngleLeft-620x355.jpg"
+     data-id="4099600"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="355"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/OptomaHZ40AngleLeft-320x183.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/OptomaHZ40AngleLeft-620x355.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/OptomaHZ40AngleLeft-920x527.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/OptomaHZ40AngleLeft-1220x699.jpg 1220w,
+			"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Optoma</div>
+													<h3><span>Optoma HZ40</span></h3>
+								
+											<p>Gives the advantages of laser projection, but also highlights laser's problems</p>
+																								<span class="author entry-author details">John Archer</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-15T10:19:47+01:00">
+																	October 15, 2020 10:19 am BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div><div class="querywidget-more">
+	<a href="/reviews" class="btn btn-primary icon-button--after" name="Read more">More Reviews</a>
+</div>
+</section><section id="custom_html-19" class="widget_text  s-container sticky-anchor widget_custom_html"><h2 class="widgettitle heading"><span>Latest Videos</span></h2><div class="textwidget custom-html-widget"><script src="https://cdn.jwplayer.com/players/brSy2gWM-N57WUgsU.js"></script>
+
+<style>
+	#botr_brSy2gWM_N57WUgsU_div{
+		width: 70% !important;
+		margin: auto;
+	}
+</style></div></section><section id="keystone-query-widget-id-38" class="palette-a s-container--inc-sidebar listing--single-inc-sidebar s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span><a href="/news">Tech News</a></span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="7"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/iphone-12-vs-galaxy-s20-4104359" title="iPhone 12 vs Galaxy S20: The battle of the flagships" name="iPhone 12 vs Galaxy S20: The battle of the flagships"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/iphone12-VS-Samsungs20-620x413.jpg"
+     data-id="4104361"
+     class="image-sm lazyload blur-up"
+     alt="iPhone 12 vs Galaxy S20"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/iphone12-VS-Samsungs20-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/iphone12-VS-Samsungs20-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/iphone12-VS-Samsungs20-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>iPhone 12 vs Galaxy S20: The battle of the flagships</span></h3>
+								
+																								<span class="author entry-author details">Adam Speight</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T17:11:01+01:00">
+																	October 16, 2020 5:11 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/how-to/how-to-add-a-spotify-widget-in-ios-14-4104335" title="How to add a Spotify widget in iOS 14" name="How to add a Spotify widget in iOS 14"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-620x403.png"
+     data-id="4103999"
+     class="image-sm lazyload blur-up"
+     alt="Spotify iOS 14 widget"
+     width="620"
+	 height="403"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-320x208.png 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-620x403.png 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-920x598.png 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-1220x793.png 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-1620x1053.png 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Screenshot-2020-10-14-at-8.24.57-PM-1920x1248.png 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">How to</div>
+													<h3><span>How to add a Spotify widget in iOS 14</span></h3>
+								
+																								<span class="author entry-author details">Hannah Davies</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T16:34:06+01:00">
+																	October 16, 2020 4:34 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/gaming/games-have-more-female-heroes-than-ever-according-to-a-new-report-4104347" title="Games have more female heroes than ever, according to a new report" name="Games have more female heroes than ever, according to a new report"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-620x349.jpg"
+     data-id="4104348"
+     class="image-sm lazyload blur-up"
+     alt="Zelda"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/c8ece80c-974a-42c0-a0ce-93f3fccd980d_Zelda-1620x911.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Gaming and Console News</div>
+													<h3><span>Games have more female heroes than ever, according to a new report</span></h3>
+								
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T15:45:47+01:00">
+																	October 16, 2020 3:45 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/gaming/ps5-and-xbox-series-x-versions-of-marvels-avengers-delayed-to-2021-4104331" title="PS5 and Xbox Series X versions of Marvel's Avengers delayed to 2021" name="PS5 and Xbox Series X versions of Marvel's Avengers delayed to 2021"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-620x349.jpg"
+     data-id="4104333"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-1620x911.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/trm_wtw_gw4_cloninglab_01-m-LBKkn-G-1920x1080.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Gaming and Console News</div>
+													<h3><span>PS5 and Xbox Series X versions of Marvel's Avengers delayed to 2021</span></h3>
+								
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T15:02:17+01:00">
+																	October 16, 2020 3:02 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/ps5-games-3937575" title="Best PS5 Games: All the biggest confirmed games coming to PlayStation 5" name="Best PS5 Games: All the biggest confirmed games coming to PlayStation 5"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-620x413.jpg"
+     data-id="4038267"
+     class="image-sm lazyload blur-up"
+     alt="best ps5 games"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">The Best List</div>
+													<h3><span>Best PS5 Games: All the biggest confirmed games coming to PlayStation 5</span></h3>
+								
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T14:16:58+01:00">
+																	October 16, 2020 2:16 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/iphone-12-pro-vs-iphone-12-4103280" title="iPhone 12 vs iPhone 12 Pro: Should you go Pro or save cash?" name="iPhone 12 vs iPhone 12 Pro: Should you go Pro or save cash?"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/12-VS-12-pro-620x413.jpg"
+     data-id="4103652"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/12-VS-12-pro-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/12-VS-12-pro-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/12-VS-12-pro-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>iPhone 12 vs iPhone 12 Pro: Should you go Pro or save cash?</span></h3>
+								
+																								<span class="author entry-author details">Max Parker</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T14:20:36+01:00">
+																	October 16, 2020 2:20 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/news/cyberpunk-2077-release-date-gameplay-2948412" title="Cyberpunk 2077: Google Stadia version is coming sooner than we expected" name="Cyberpunk 2077: Google Stadia version is coming sooner than we expected"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-620x348.jpg"
+     data-id="4038925"
+     class="image-sm lazyload blur-up"
+     alt="Cyberpunk 2077"
+     width="620"
+	 height="348"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-620x348.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-920x517.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/EbX8hZdWoAEX7xC-1620x910.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Tech News</div>
+													<h3><span>Cyberpunk 2077: Google Stadia version is coming sooner than we expected</span></h3>
+								
+																								<span class="author entry-author details">Jade King</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-16T13:46:10+01:00">
+																	October 16, 2020 1:46 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div><div class="querywidget-more">
+	<a href="/news" class="btn btn-primary icon-button--after" name="Read more">More News</a>
+</div>
+</section><section id="keystone-query-widget-id-39" class="palette-a filmstrip-5 listing--filmstrip filmstrip-5 listing--filmstrip-c s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span><a href="/category/best">Latest Buying Guides</a></span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="5"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/ps5-games-3937575" title="Best PS5 Games: All the biggest confirmed games coming to PlayStation 5" name="Best PS5 Games: All the biggest confirmed games coming to PlayStation 5"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-620x413.jpg"
+     data-id="4038267"
+     class="image-sm lazyload blur-up"
+     alt="best ps5 games"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/best-ps5-games-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best PS5 Games: All the biggest confirmed games coming to PlayStation 5</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-camera-phones-3520817" title="Best camera phones 2020: 9 top smartphone cameras" name="Best camera phones 2020: 9 top smartphone cameras"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-620x413.jpg"
+     data-id="3943129"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/10/iphone11pro-1-7-1620x1080.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best camera phones 2020: 9 top smartphone cameras</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-running-headphones-3433590" title="Best Running Headphones: The best sports headphones for workouts" name="Best Running Headphones: The best sports headphones for workouts"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-running-headphone-620x413.jpg"
+     data-id="4104260"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-running-headphone-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-running-headphone-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/06/Best-running-headphone-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best Running Headphones: The best sports headphones for workouts</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-android-phones-3438996" title="Best Android phones 2020: The 16 best phones with Android right now" name="Best Android phones 2020: The 16 best phones with Android right now"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-620x413.jpeg"
+     data-id="4102300"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-320x213.jpeg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-620x413.jpeg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-920x613.jpeg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-1220x813.jpeg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-1620x1080.jpeg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/09/DSCF1047-1920x1280.jpeg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best Android phones 2020: The 16 best phones with Android right now</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/best/best-mid-range-smartphones-3607758" title="Best mid-range smartphones of 2020: 8 great mid-priced flagships" name="Best mid-range smartphones of 2020: 8 great mid-priced flagships"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-620x413.jpg"
+     data-id="4102143"
+     class="image-sm lazyload blur-up"
+     alt="Samsung Galaxy S20 FE"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-920x613.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-1220x813.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-1620x1080.jpg 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/X1008269-1920x1280.jpg 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									
+													<h3><span>Best mid-range smartphones of 2020: 8 great mid-priced flagships</span></h3>
+								
+																		
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div><div class="querywidget-more">
+	<a href="/category/best" class="btn btn-primary icon-button--after" name="Read more">All Buying Guides</a>
+</div>
+</section><section id="keystone-query-widget-id-40" class="palette-a s-container--inc-sidebar listing--single-inc-sidebar s-container s-container--fullbleed sticky-anchor image-aspect-landscape  fullbleed keystone-query-widget"><h2 class="widgettitle heading"><span>Money Saving Deals</span></h2><div class="s-container__inner">
+	<ul
+		class="listing-items"
+				data-post-count="6"
+	>
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/echo-show-8-ring-indoor-cam-prime-day-4103988" title="Get a crazy cheap Echo Show and Ring Indoor Cam bundle before Prime Day ends" name="Get a crazy cheap Echo Show and Ring Indoor Cam bundle before Prime Day ends"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/81NemKhh2yL._AC_SL1500_-620x340.jpg"
+     data-id="4103989"
+     class="image-sm lazyload blur-up"
+     alt=""
+     width="620"
+	 height="340"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/81NemKhh2yL._AC_SL1500_-320x175.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/81NemKhh2yL._AC_SL1500_-620x340.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/81NemKhh2yL._AC_SL1500_-920x504.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/81NemKhh2yL._AC_SL1500_-1220x669.jpg 1220w,
+			"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>Get a crazy cheap Echo Show and Ring Indoor Cam bundle before Prime Day ends</span></h3>
+								
+																								<span class="author entry-author details">Chris Smith</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T19:31:22+01:00">
+																	October 14, 2020 7:31 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/amazon-prime-day-2020-4101686" title="Best Amazon Prime Day Deals: Last chance to bag a bargain" name="Best Amazon Prime Day Deals: Last chance to bag a bargain"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Amazon-Prime-Day-2020-Main-Hub-620x413.jpg"
+     data-id="4103980"
+     class="image-sm lazyload blur-up"
+     alt="Best Amazon Prime Day Deals 2020"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Amazon-Prime-Day-2020-Main-Hub-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Amazon-Prime-Day-2020-Main-Hub-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Amazon-Prime-Day-2020-Main-Hub-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>Best Amazon Prime Day Deals: Last chance to bag a bargain</span></h3>
+								
+																								<span class="author entry-author details">Thomas Deehan</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T18:44:49+01:00">
+																	October 14, 2020 6:44 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/hit-those-fitness-goals-with-this-unbelievable-offer-on-the-fitbit-versa-2-4103969" title="Hit those fitness goals with this unbelievable offer on the Fitbit Versa 2" name="Hit those fitness goals with this unbelievable offer on the Fitbit Versa 2"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-620x349.jpg"
+     data-id="4033462"
+     class="image-sm lazyload blur-up"
+     alt="Fitbit Versa 2 Deal"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/Fitbit-Versa-2-Deal-1620x911.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>Hit those fitness goals with this unbelievable offer on the Fitbit Versa 2</span></h3>
+								
+																								<span class="author entry-author details">Hannah Davies</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T18:15:41+01:00">
+																	October 14, 2020 6:15 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/iphone-se-2-prime-day-deal-budget-apple-phone-falls-to-lowest-price-on-amazon-4103950" title="iPhone SE 2 Prime Day Deal: Budget Apple phone falls to lowest price on Amazon" name="iPhone SE 2 Prime Day Deal: Budget Apple phone falls to lowest price on Amazon"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-620x349.jpg"
+     data-id="4030227"
+     class="image-sm lazyload blur-up"
+     alt="iPhone SE Deal"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-320x180.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-620x349.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-920x518.jpg 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-1220x686.jpg 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/05/iPhone-SE-Deal-1620x911.jpg 1620w,
+		"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>iPhone SE 2 Prime Day Deal: Budget Apple phone falls to lowest price on Amazon</span></h3>
+								
+																								<span class="author entry-author details">Ryan Jones</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T17:32:51+01:00">
+																	October 14, 2020 5:32 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/nintendo-switch-price-drop-save-25-with-this-animal-crossing-bundle-4103928" title="Nintendo Switch price drop – save £25 with this Animal Crossing bundle" name="Nintendo Switch price drop – save £25 with this Animal Crossing bundle"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-620x349.png"
+     data-id="3878816"
+     class="image-sm lazyload blur-up"
+     alt="Nintendo Switch Deal"
+     width="620"
+	 height="349"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-320x180.png 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-620x349.png 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-920x518.png 920w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-1220x686.png 1220w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-1620x911.png 1620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2019/06/Nintendo-Switch-Deal-1920x1080.png 1920w,
+	"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>Nintendo Switch price drop – save £25 with this Animal Crossing bundle</span></h3>
+								
+																								<span class="author entry-author details">Hannah Davies</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T16:36:17+01:00">
+																	October 14, 2020 4:36 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+		
+						<li class="listing-item">
+	 <a class="entry listing-entry" href="https://www.trustedreviews.com/deals/prime-day-phone-tablet-deals-4102416" title="Best Prime Day Phone and Tablet Deals: Save big on flagship devices" name="Best Prime Day Phone and Tablet Deals: Save big on flagship devices"> 																<div class="entry-media">
+				<div class="entry-media-inner entry-image image-crop">
+					<img
+     src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"     data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Phone-and-Tablet-Deals-1-620x413.jpg"
+     data-id="4103897"
+     class="image-sm lazyload blur-up"
+     alt="Best Prime Day Phone Deals"
+     width="620"
+	 height="413"
+	 data-srcset="
+			https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Phone-and-Tablet-Deals-1-320x213.jpg 320w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Phone-and-Tablet-Deals-1-620x413.jpg 620w,
+				https://www.trustedreviews.com/wp-content/uploads/sites/54/2020/10/Phone-and-Tablet-Deals-1-920x613.jpg 920w,
+				"/>				</div>
+			</div>
+		
+									
+					<div class="entry-content">
+									<div class="taxonomy-signpost inline ">Deals</div>
+													<h3><span>Best Prime Day Phone and Tablet Deals: Save big on flagship devices</span></h3>
+								
+																								<span class="author entry-author details">Ryan Jones</span>
+					
+											<span class="date details">
+							<time datetime="2020-10-14T16:25:22+01:00">
+																	October 14, 2020 4:25 pm BST
+															</time>
+						</span>
+					
+																									</div>
+			 </a> </li>
+
+			
+			
+			</ul>
+</div></section>
+			
+	</div>
+
+			<div class="parallax-wrapper parallax-wrapper--footer sticky-anchor"></div>
+
+<footer id="footer" role="contentinfo" class="footer sticky-anchor">
+	<div class="footer__row">
+		<nav class="footer__col footer__col--content">
+			<ul id="menu-3" class="footer-menu footer-menu--plain">
+			<li id="menu-item-3927554" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3927554">
+			<a href="/archive"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Content archive
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651360" class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item no-icon menu-item-2651360">
+			<a href="/info/about-us-2-3982927"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					About us / contact us
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3580003" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3580003">
+			<a href="https://www.trustedreviews.com/info/trusted-reviews-ethics-policy-3521647"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Editorial independence
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550819" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550819">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Labelling of commercial content
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550821" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550821">
+			<a href="https://www.ipso.co.uk/editors-code-of-practice/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					IPSO Editors' Code of Practice
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651363" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651363">
+			<a href="https://www.ti-media.com/privacy/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy &amp; cookie policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651362" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651362">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Terms &amp; Conditions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550818" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550818">
+			<a href="https://www.incisivemedia.com/terms-conditions/"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Third party advertising policy
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3550823" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3550823">
+			<a href="https://comps.trustedreviews.com/?_ga=2.81825043.400893545.1535971409-812703703.1535551482"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Competitions
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651361" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-2651361">
+			<a href="https://www.trustedreviews.com/info/about-us-2-3982927"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Advertise with us
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3525646" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-3525646">
+			<a href="#"  title="privacy-settings"   target="_blank" rel="noopener" class="menu-icon-item icon-social-no-icon" name="Visit our no-icon page">
+				<span class="menu-icon-item icon-no-icon">
+					Privacy Settings
+				</span>
+			</a>
+		</li>
+	</ul>		</nav>
+		<nav class="footer__col footer__col--sidebar">
+			<div class="ad-logos">
+	<a href="https://www.iabuk.com/goldstandard" class="footer__iab" target="_blank" rel="noopener" name="IAB Gold Standard">
+		<img 
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+			data-src="/wp-content/themes/simba-theme/assets/images/iab_logo.png" 
+			class="lazyload blur-up" 
+			alt="IAB Gold Standard" 
+			width="100%" />
+	</a>
+	<a href="https://jicwebs.org/standards/brand-safety/" class="footer__jic" target="_blank" rel="noopener" name="JIC WEBS Brand Safety">
+		<img 
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png" 
+			data-src="/wp-content/themes/simba-theme/assets/images/jic_webs_logo.jpg" 
+			class="lazyload blur-up" 
+			alt="JIC WEBS Brand Safety" 
+			width="100%" />
+	</a>
+</div>
+			
+		</nav>
+
+		<div class="footer-legal">
+			<a itemprop="url" href="" title="" name="">
+			<img
+				itemprop="logo"
+				src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"
+				data-src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2018/10/tr-logo-large-1.png"
+				class="lazyload blur-up footer-logo"
+				alt=""
+				data-pin-nopin="true">
+		</a>
+		<sub>&copy; Copyright TrustedReviews Limited. 172 Drury Lane, London, WC2B 5QR. All rights reserved.</sub>
+	<a href="https://www.ipso.co.uk/what-we-do/" class="footer__ipso" target="_blank" rel="noopener" name="Visit the IPSO website">
+		<img
+			src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/placeholder.png"
+			data-src="https://www.trustedreviews.com/wp-content/themes/simba-theme/assets/images/ipso-dark.png"
+			class="lazyload blur-up"
+			alt="IPSO Regulated"
+			width="100%" />
+	</a>
+</div>
+		<ul id="menu-8" class="footer-menu footer-menu--icons">
+			<li id="menu-item-2651357" class="menu-item menu-item-type-custom menu-item-object-custom menu-icon-facebook menu-item-2651357">
+			<a href="https://www.facebook.com/pages/TrustedReviews/38275114220?ref=ts"   target="_blank" rel="noopener" class="menu-icon-item icon-social-facebook" name="Visit our facebook page">
+				<span class="menu-icon-item icon-facebook">
+					Facebook
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651356" class="menu-item menu-item-type-custom menu-item-object-custom first-menu-item menu-icon-twitter menu-item-2651356">
+			<a href="https://twitter.com/trustedreviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-twitter" name="Visit our twitter page">
+				<span class="menu-icon-item icon-twitter">
+					Twitter
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-2651358" class="menu-item menu-item-type-custom menu-item-object-custom menu-icon-youtube menu-item-2651358">
+			<a href="https://www.youtube.com/user/TrustedReviews"   target="_blank" rel="noopener" class="menu-icon-item icon-social-youtube" name="Visit our youtube page">
+				<span class="menu-icon-item icon-youtube">
+					YouTube
+				</span>
+			</a>
+		</li>
+			<li id="menu-item-3249533" class="menu-item menu-item-type-post_type menu-item-object-page menu-icon-rss menu-item-3249533">
+			<a href="https://www.trustedreviews.com/rss-feeds"   target="_blank" rel="noopener" class="menu-icon-item icon-social-rss" name="Visit our rss page">
+				<span class="menu-icon-item icon-rss">
+					Follow Trusted Reviews via RSS
+				</span>
+			</a>
+		</li>
+	</ul>	</div>
+</footer>
+		<div id="venatus__dfpad-overlay__2" class="ipc-advert venatus-placeholder ipc-advert-dfpad-overlay">
+					<script type="text/javascript">
+						var ipcVenatusQueue = window.ipcVenatusQueue || [];
+						ipcVenatusQueue.push( {"div_id":"venatus__dfpad-overlay__2","placement_ids":{"mobile":{"id":"5f5a1427ebf74d173c00cdd1"},"desktop":{"id":"5f5a1427ebf74d173c00cdd1"}}} );
+					</script>
+				</div><!-- Venatus placement IDs not found for slot "gumgum". --><!-- Venatus placement IDs not found for slot "sovrn". --><!-- Venatus placement IDs not found for slot "instream". -->		<script type="text/javascript">
+			(function() {
+				/* Include required screen size functions right here */
+				var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+				var getWindowSize = getDisplayWidth();
+				window.ipcTags = window.ipcTags || {};
+				/* Pageskin targeting stuff */
+				if(getWindowSize >= 1350) {
+					window.ipcTags['pageskin'] = 'yes';
+				} else {
+					window.ipcTags['pageskin'] = 'no';
+				}
+
+				window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+			})();
+		</script>
+		<script type='text/javascript'>
+			(function(d,w){
+				var s = d.createElement('script');
+				w.lazySizesConfig = {'expFactor':'1'};
+				s.src = 'https://www.trustedreviews.com/wp-content/plugins/keystone-images/assets/js/sizes.js?ver=0.0.1';
+				d.body.appendChild(s);
+			})(document,window);
+		</script><script type='text/javascript' src='https://www.trustedreviews.com/wp-content/themes/kiara-child-theme/dist/js/main.min.js?ver=1603085099' id='keystone-premium-js'></script>
+<script type='text/javascript' id='keystone_newsletter_-script-js-extra'>
+/* <![CDATA[ */
+var keystone_newsletter = {"form_url":"https:\/\/ti-media.slgnt.eu\/renderers\/xml.ashx?ID=nLUnUG6KOH7JVtNut_mqr75CzNVCbo18YbNezlFBjHW9kR%2B98Rc6r4aNyu50jiA2PGhvykw1_OhnBfMVr5&NEWSLETTER_CODE=YTR-X&BRAND_CODE=YTR&SOURCE_CODE=RRL"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-newsletter/widget/../dist/js/newsletter.min.js?ver=1603085098' id='keystone_newsletter_-script-js'></script>
+<script type='text/javascript' id='ajax-script-js-extra'>
+/* <![CDATA[ */
+var frontEndAjax = {"ajaxurl":"https:\/\/www.trustedreviews.com\/wp-admin\/admin-ajax.php","nonce":"5bd5447c94"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-content/plugins/keystone-newsletter/widget/../dist/js/recaptcha.min.js?ver=1603085098' id='ajax-script-js'></script>
+<script type='text/javascript' src='https://www.trustedreviews.com/wp-includes/js/wp-embed.min.js?ver=NS41LjE' id='wp-embed-js'></script>
+
+	
+</div><!-- /wrapper -->
+
+	<div class="textwidget custom-html-widget"><div class="vm-placement" data-id="5f5a1427ebf74d173c00cdd1" style="display:none"></div></div><div class="textwidget custom-html-widget"><script>
+	setTimeout(function(){
+		navigation.resizeNav();
+	},2000);
+</script></div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-08117103be773d6204a","applicationID":"572418288","transactionName":"NF0HMEQDWhJQBkJfDg0XJAdCC1sPHg1ZWwQ=","queueTime":0,"applicationTime":322,"atts":"GBoQRgwZSU0TBBQMGh5F","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
